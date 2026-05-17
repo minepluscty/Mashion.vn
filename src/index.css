@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* redeploy trigger */
 /* Kéo 3 ô hero sát cụm ảnh hơn trên desktop */
 @media (min-width: 1024px) {
   #intro .max-w-\[650px\] > div:nth-child(1) {
