@@ -98,27 +98,15 @@ function LineIcon({ type = 'check', size = 22, className = '' }) {
     ),
     package: (
       <>
-        <path d="m3 7 9-4 9 4-9 4-9-4Z" />
+        <path d="m3 7 9-4 9 4-9-4Z" />
         <path d="M3 7v10l9 4 9-4V7" />
         <path d="M12 11v10" />
-      </>
-    ),
-    clock: (
-      <>
-        <circle cx="12" cy="12" r="9" />
-        <path d="M12 7v5l3 2" />
       </>
     ),
     shield: (
       <>
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
         <path d="m9 12 2 2 4-5" />
-      </>
-    ),
-    headset: (
-      <>
-        <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
-        <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
       </>
     ),
     phone: <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 1.9Z" />,
@@ -143,19 +131,28 @@ function LineIcon({ type = 'check', size = 22, className = '' }) {
         <path d="M22 21v-2a4 4 0 0 0-3-3.8" />
       </>
     ),
-    search: (
+    ruler: (
       <>
-        <circle cx="11" cy="11" r="8" />
-        <path d="m21 21-4.3-4.3" />
+        <path d="M21 12H3" />
+        <path d="M21 6H3" />
+        <path d="M21 18H3" />
+        <path d="M7 12v-3" />
+        <path d="M11 12v-2" />
+        <path d="M15 12v-3" />
+        <path d="M7 18v-3" />
+        <path d="M11 18v-2" />
+        <path d="M15 18v-3" />
       </>
     ),
-    dots: (
+    truck: (
       <>
-        <circle cx="5" cy="12" r="1" fill="currentColor" strokeWidth="0" />
-        <circle cx="12" cy="12" r="1" fill="currentColor" strokeWidth="0" />
-        <circle cx="19" cy="12" r="1" fill="currentColor" strokeWidth="0" />
+        <path d="M10 17h4V5H2v12h3" />
+        <path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5v8h2" />
+        <circle cx="8.5" cy="17.5" r="1.5" />
+        <circle cx="18.5" cy="17.5" r="1.5" />
       </>
-    )
+    ),
+    arrowRight: <path d="M5 12h14M12 5l7 7-7 7" />
   }
 
   return (
@@ -165,61 +162,87 @@ function LineIcon({ type = 'check', size = 22, className = '' }) {
   )
 }
 
-const navItems = ['Giới thiệu', 'Dịch vụ', 'Quy trình', 'Dự án', 'Blog', 'Liên hệ']
+const navItems = [
+  { label: 'Giới thiệu', href: '#about' },
+  { label: 'Dịch vụ', href: '#services' },
+  { label: 'Quy trình', href: '#process' },
+  { label: 'Dự án', href: '#works' },
+  { label: 'Blog', href: '#news' },
+  { label: 'Liên hệ', href: '#contact' },
+]
 
 const stats = [
-  { value: 500, suffix: '+', label: 'Doanh nghiệp' },
-  { value: 50000, suffix: '+', label: 'Sản phẩm / tháng' },
-  { value: 10, suffix: '+', label: 'Năm kinh nghiệm' },
-  { value: 48, suffix: 'h', label: 'May mẫu nhanh' },
+  { value: 500, suffix: '+', label: 'doanh nghiệp tư vấn' },
+  { value: 1000, suffix: '+', label: 'mẫu thiết kế' },
+  { value: 30, suffix: '+', label: 'ngành nghề' },
+  { value: 98, suffix: '%', label: 'khách hài lòng' },
 ]
 
 const partners = ['VINFAST', 'Vietcombank', 'FPT', 'thegioididong', 'BIDV', 'VPBank', 'Sun Life']
 
 const industries = [
-  { title: 'Doanh nghiệp', icon: 'shirt' },
-  { title: 'F&B – Nhà hàng', icon: 'cup' },
-  { title: 'Spa – Thẩm mỹ', icon: 'lotus' },
-  { title: 'Khách sạn', icon: 'palm' },
-  { title: 'Nhà xưởng', icon: 'factory' },
-  { title: 'Retail', icon: 'bag' },
-  { title: 'Văn phòng', icon: 'building' },
-  { title: 'Xem thêm', icon: 'package' },
+  { title: 'Doanh nghiệp', icon: 'building' },
+  { title: 'Nhà hàng - khách sạn', icon: 'cup' },
+  { title: 'Spa - thẩm mỹ viện', icon: 'lotus' },
+  { title: 'Công sở', icon: 'shirt' },
+  { title: 'Áo thun đồng phục', icon: 'shirt' },
+  { title: 'Đồng phục sự kiện', icon: 'users' },
+  { title: 'Trường học', icon: 'users' },
+  { title: 'Bảo hộ lao động', icon: 'shield' },
 ]
 
-const solutions = [
-  { title: 'Đồng phục văn phòng', desc: 'Sơ mi, polo, vest, chân váy và phụ kiện nhận diện cho đội ngũ văn phòng.', icon: 'shirt', color: '#3b82f6', image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop' },
-  { title: 'Nhà hàng / Cafe', desc: 'Tạp dề, áo thun, sơ mi và đồng phục bếp đồng bộ cho chuỗi F&B.', icon: 'cup', color: '#f97316', image: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1200&auto=format&fit=crop' },
-  { title: 'Spa / Beauty', desc: 'Form mềm, màu tinh tế, tạo cảm giác chuyên nghiệp trong trải nghiệm dịch vụ.', icon: 'lotus', color: '#a855f7', image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop' },
+const products = [
+  { title: 'Áo thun đồng phục', desc: 'Chất liệu thoáng mát, co giãn tốt, phù hợp cho sự kiện, công ty.', image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800&auto=format&fit=crop', color: 'bg-[#E5F0FF]' },
+  { title: 'Áo polo đồng phục', desc: 'Trẻ trung, lịch sự, giữ form chuẩn, phù hợp môi trường văn phòng.', image: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=800&auto=format&fit=crop', color: 'bg-[#FFEBEF]' },
+  { title: 'Sơ mi công sở', desc: 'Thanh lịch, chuyên nghiệp, chất liệu chống nhăn cao cấp.', image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=800&auto=format&fit=crop', color: 'bg-[#F2F8EE]' },
+  { title: 'Đồng phục nhà hàng', desc: 'Thiết kế tiện dụng, thấm hút tốt, nhận diện thương hiệu F&B rõ nét.', image: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=800&auto=format&fit=crop', color: 'bg-[#FFFBEB]' },
+  { title: 'Đồng phục spa', desc: 'Form mềm mại, màu sắc tinh tế, tạo cảm giác thư giãn, chuyên nghiệp.', image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800&auto=format&fit=crop', color: 'bg-[#F3E8FF]' },
+  { title: 'Tạp dề đồng phục', desc: 'Chống thấm, bền bỉ, tích hợp túi tiện dụng cho nhân viên phục vụ.', image: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=800&auto=format&fit=crop', color: 'bg-[#F1F5F9]' },
+]
+
+const benefits = [
+  { title: 'Thiết kế đúng nhận diện', desc: 'Tư vấn màu sắc, logo, phong cách thương hiệu.', icon: 'palette' },
+  { title: 'Chất liệu phù hợp', desc: 'Tư vấn vải theo môi trường sử dụng thực tế.', icon: 'ruler' },
+  { title: 'Form dáng hiện đại', desc: 'Phom mặc đẹp, dễ vận động, phù hợp nhiều vóc dáng.', icon: 'shirt' },
+  { title: 'Sản xuất lớn', desc: 'Quy trình rõ ràng, kiểm soát chất lượng và tiến độ.', icon: 'factory' },
+  { title: 'Thiết kế mockup', desc: 'Lên phối màu, chỉnh chi tiết trước khi sản xuất.', icon: 'document' },
+  { title: 'Giao hàng toàn quốc', desc: 'Phù hợp doanh nghiệp có nhiều chi nhánh.', icon: 'truck' },
 ]
 
 const process = [
-  { title: 'Tiếp nhận', desc: 'Tư vấn & ghi nhận yêu cầu', icon: 'consult', color: '#3b82f6' },
-  { title: 'Thiết kế', desc: 'Lên ý tưởng theo nhận diện', icon: 'palette', color: '#a855f7' },
-  { title: 'May mẫu', desc: 'Duyệt mẫu trong 48h', icon: 'shirt', color: '#ec4899' },
-  { title: 'Sản xuất', desc: 'Sản xuất hàng loạt', icon: 'factory', color: '#f97316' },
-  { title: 'Giao hàng', desc: 'Đúng hẹn, đúng chất lượng', icon: 'package', color: '#eab308' },
+  { title: 'Tiếp nhận nhu cầu', desc: 'Lắng nghe & hiểu', icon: 'consult' },
+  { title: 'Tư vấn chi tiết', desc: 'Chất liệu & kiểu dáng', icon: 'palette' },
+  { title: 'Thiết kế & May mẫu', desc: 'Duyệt trong 48h', icon: 'shirt' },
+  { title: 'Sản xuất hàng loạt', desc: 'Kiểm soát chất lượng', icon: 'factory' },
+  { title: 'Đóng gói & Giao', desc: 'Tận nơi toàn quốc', icon: 'package' },
+]
+
+const faqs = [
+  { q: 'Số lượng đặt may tối thiểu (MOQ) là bao nhiêu?', a: 'Mashion nhận sản xuất với số lượng từ 50 áo trở lên để đảm bảo chi phí tối ưu nhất cho doanh nghiệp của bạn.' },
+  { q: 'Thời gian hoàn thành một đơn hàng mất bao lâu?', a: 'Thời gian tiêu chuẩn là 10-15 ngày sau khi chốt mẫu thiết kế. Với đơn hàng gấp, chúng tôi có thể linh động hỗ trợ.' },
+  { q: 'Tôi có thể yêu cầu may mẫu trước khi sản xuất hàng loạt không?', a: 'Chắc chắn rồi! Chúng tôi hỗ trợ may mẫu trong vòng 48h để bạn trực tiếp kiểm tra chất liệu và form dáng trước khi duyệt sản xuất.' },
+  { q: 'Mashion có hỗ trợ thiết kế logo và nhận diện không?', a: 'Có. Đội ngũ thiết kế của chúng tôi sẵn sàng hỗ trợ bạn thiết kế hoặc tinh chỉnh logo, bố cục in thêu sao cho nổi bật nhất trên áo.' }
 ]
 
 const cases = [
-  { title: 'Đồng bộ hình ảnh cho chuỗi cafe', meta: '320 bộ / 14 ngày', image: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1200&auto=format&fit=crop' },
-  { title: 'Tái thiết kế uniform cho spa cao cấp', meta: '95 bộ / 9 ngày', image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop' },
+  { title: 'Đồng phục Cafe Highland', meta: 'Nhà hàng / F&B', image: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=800&auto=format&fit=crop' },
+  { title: 'Đồng phục Spa Yb', meta: 'Spa / Thẩm mỹ', image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800&auto=format&fit=crop' },
+  { title: 'Sự kiện TechCom', meta: 'Sự kiện / Doanh nghiệp', image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop' },
 ]
 
-function SectionTitle({ eyebrow, title, desc }) {
+function SectionTitle({ eyebrow, title, desc, align = 'center' }) {
   return (
-    <div className="mb-8 md:mb-10">
-      <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#3b82f6]">{eyebrow}</p>
-      <h3 className="max-w-3xl text-[32px] font-extrabold leading-tight tracking-[-0.03em] text-[#111827] md:text-5xl">{title}</h3>
-      {desc ? <p className="mt-4 max-w-2xl text-[16px] leading-[1.6] text-slate-500 font-inter md:text-lg">{desc}</p> : null}
-    </div>
-  )
-}
-
-function GlassCard({ children, className = '' }) {
-  return (
-    <div className={`rounded-[24px] border border-white/80 bg-white/60 shadow-[0_10px_40px_rgba(0,0,0,0.03)] backdrop-blur-xl ${className}`}>
-      {children}
+    <div className={`mb-12 ${align === 'center' ? 'text-center mx-auto' : ''}`}>
+      {eyebrow && (
+        <div className={`mb-4 inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-[11px] font-bold tracking-[0.1em] text-blue-600`}>
+          <LineIcon type="sparkles" size={14} />
+          {eyebrow}
+        </div>
+      )}
+      <h2 className="mb-4 text-[32px] sm:text-[40px] font-extrabold leading-[1.1] tracking-tight text-[#111827]">
+        {title}
+      </h2>
+      {desc && <p className="mx-auto max-w-[600px] text-[16px] leading-[1.6] text-slate-500">{desc}</p>}
     </div>
   )
 }
@@ -227,11 +250,10 @@ function GlassCard({ children, className = '' }) {
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [mobileContactOpen, setMobileContactOpen] = useState(false)
-  const sliderRef = useRef(null)
+  const [openFaq, setOpenFaq] = useState(0)
 
-  const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.19, 1, 0.22, 1] } } }
-  const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.1 } } }
+  const fadeUp = { hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } }
+  const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.15 } } }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
@@ -240,362 +262,400 @@ export default function App() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  useEffect(() => {
-    const slider = sliderRef.current
-    if (!slider) return undefined
-    const timer = window.setInterval(() => {
-      const maxScroll = slider.scrollWidth - slider.clientWidth
-      if (maxScroll <= 0) return
-      const nextLeft = slider.scrollLeft + 0.8
-      slider.scrollTo({ left: nextLeft >= maxScroll - 2 ? 0 : nextLeft, behavior: nextLeft >= maxScroll - 2 ? 'smooth' : 'auto' })
-    }, 28)
-    return () => window.clearInterval(timer)
-  }, [])
-
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#FAFAFD] font-sans text-slate-900 antialiased selection:bg-[#3b82f6] selection:text-white">
+    <div className="min-h-screen overflow-x-hidden bg-[#FAFAFA] font-sans text-slate-600 antialiased selection:bg-blue-600 selection:text-white">
       <style>{`
         .no-scrollbar::-webkit-scrollbar{display:none}
         .no-scrollbar{scrollbar-width:none}
-        @media (max-width: 767px){
-          section{padding-left:24px!important;padding-right:24px!important;padding-top:48px!important;padding-bottom:48px!important}
-        }
       `}</style>
 
-      {/* NEW SKILLFLOW BACKGROUND MESH */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
-        <div className="absolute -left-[5%] top-[-5%] h-[700px] w-[700px] rounded-full bg-[#D6EFFF] opacity-[0.8] blur-[120px]" />
-        <div className="absolute -left-[10%] bottom-[10%] h-[700px] w-[700px] rounded-full bg-[#FFD5C2] opacity-[0.9] blur-[130px]" />
-        <div className="absolute right-[-5%] top-[0%] h-[800px] w-[800px] rounded-full bg-[#EFE9FF] opacity-[0.9] blur-[140px]" />
-        <div className="absolute right-[10%] bottom-[0%] h-[600px] w-[600px] rounded-full bg-[#F5F8FF] opacity-[0.9] blur-[120px]" />
-      </div>
-
-      <div className="relative z-50 px-4 pt-6 md:px-8">
-        <header className={`mx-auto flex max-w-[1300px] items-center justify-between rounded-full bg-white/60 px-6 py-3.5 shadow-[0_4px_30px_rgba(0,0,0,0.03)] backdrop-blur-2xl border border-white transition-all ${scrolled ? 'fixed top-4 left-4 right-4 md:left-8 md:right-8 z-50 shadow-[0_10px_40px_rgba(0,0,0,0.06)]' : ''}`}>
-          <a href="#" className="flex items-center gap-2.5 shrink-0">
-            {/* Logo adapted to look like Skillflow's but for Mashion */}
-            <div className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-[#2563eb] to-[#3b82f6] text-white shadow-sm">
-              <span className="font-bold text-[18px] leading-none italic mt-[-1px]">M</span>
+      {/* 01. Header */}
+      <div className="absolute top-0 left-0 right-0 z-50 px-4 pt-6 md:px-8">
+        <header className={`mx-auto flex max-w-[1200px] items-center justify-between rounded-full bg-white/80 px-6 py-3.5 shadow-sm backdrop-blur-xl border border-white/50 transition-all ${scrolled ? 'fixed top-4 left-4 right-4 md:left-8 md:right-8 z-50 shadow-md' : ''}`}>
+          <a href="#" className="flex items-center gap-2.5">
+            <div className="grid h-8 w-8 place-items-center rounded-lg bg-[#3b82f6] text-white">
+              <span className="font-extrabold text-[18px] leading-none italic mt-[-1px]">M</span>
             </div>
-            <span className="text-[20px] font-extrabold tracking-[-0.02em] text-[#111827]">MASHION</span>
+            <span className="text-[18px] font-extrabold tracking-tight text-[#111827]">MASHION</span>
           </a>
 
-          <nav className="hidden lg:flex items-center gap-9 text-[15px] font-semibold text-slate-500">
-            {navItems.map((item) => <a key={item} href="#" className="transition hover:text-[#111827]">{item}</a>)}
+          <nav className="hidden lg:flex items-center gap-8 text-[14px] font-semibold text-slate-500">
+            {navItems.map((item) => <a key={item.label} href={item.href} className="transition hover:text-blue-600">{item.label}</a>)}
           </nav>
 
-          <div className="hidden md:flex items-center gap-4 shrink-0">
-            <a href="#login" className="px-4 text-[15px] font-semibold text-slate-600 transition hover:text-black">Đăng nhập</a>
-            <a href="#contact" className="rounded-full bg-[#2563eb] px-7 py-3 text-[14px] font-bold text-white shadow-[0_6px_20px_rgba(37,99,235,0.3)] transition hover:bg-[#1d4ed8]">
-              Nhận báo giá
+          <div className="hidden md:flex items-center gap-4">
+            <a href="#login" className="px-4 text-[14px] font-semibold text-slate-600 hover:text-[#111827]">Đăng nhập</a>
+            <a href="#contact" className="rounded-full bg-[#3b82f6] px-6 py-2.5 text-[14px] font-bold text-white transition hover:bg-blue-700">
+              Nhận tư vấn
             </a>
           </div>
 
-          <button onClick={() => setMenuOpen(true)} className="flex w-6 flex-col gap-1.5 md:hidden" aria-label="Mở menu">
-            <span className="h-[2px] w-full bg-slate-900" />
-            <span className="h-[2px] w-4 bg-slate-900 transition-all group-hover:w-full" />
+          <button onClick={() => setMenuOpen(true)} className="flex w-6 flex-col gap-1.5 md:hidden">
+            <span className="h-[2px] w-full bg-[#111827]" />
+            <span className="h-[2px] w-4 bg-[#111827]" />
           </button>
         </header>
       </div>
 
-      <section id="intro" className="relative px-4 pb-20 pt-20 md:px-8 md:pt-28 z-10">
-        <motion.div variants={stagger} initial="hidden" animate="show" className="mx-auto max-w-[1300px] grid gap-12 lg:grid-cols-[1fr_1.1fr] items-center">
-          
-          {/* Left Content */}
-          <motion.div variants={fadeUp} className="z-20">
-            {/* Skillflow Style Badge */}
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-[#FFF0ED] px-4 py-1.5 shadow-sm border border-white/50">
+      {/* 02. Hero Section */}
+      <section id="intro" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-white px-4 md:px-8 border-b border-slate-100 rounded-b-[40px]">
+        {/* Soft SaaS Mesh Gradients - VIBRANT */}
+        <div className="pointer-events-none absolute inset-0 z-0">
+          <div className="absolute -left-[5%] top-[-5%] h-[700px] w-[700px] rounded-full bg-[#7AC5FF] opacity-[0.45] blur-[100px]" />
+          <div className="absolute -left-[5%] bottom-[-10%] h-[700px] w-[700px] rounded-full bg-[#FF9A76] opacity-[0.35] blur-[110px]" />
+          <div className="absolute right-[-5%] top-[5%] h-[800px] w-[800px] rounded-full bg-[#B89BFF] opacity-[0.35] blur-[120px]" />
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-[1200px] grid gap-12 lg:grid-cols-[46%_54%] items-center">
+
+          {/* HERO LEFT - SKILLFLOW AESTHETIC RESTORED */}
+          <motion.div variants={stagger} initial="hidden" animate="show">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/60 px-4 py-1.5 shadow-sm border border-white/50 backdrop-blur-md">
               <span className="text-[#F43F5E]"><LineIcon type="megaphone" size={14} /></span>
               <span className="text-[12px] font-bold tracking-[0.05em] text-[#9F1239] mt-[1px]">Thương hiệu uy tín</span>
             </div>
 
-            {/* Skillflow Style Heading (All Black, Extra Bold) */}
-            <h1 className="mb-6 text-[48px] sm:text-[60px] lg:text-[72px] font-extrabold leading-[1.05] tracking-tight text-[#111827]">
-              Thiết kế đồng phục tạo dấu ấn thương hiệu
+            <h1 className="mb-6 text-[48px] sm:text-[60px] lg:text-[64px] font-extrabold leading-[1.05] tracking-tight text-[#111827]">
+              Mashion - Đồng phục nâng tầm nhận diện
             </h1>
 
-            <p className="mb-10 max-w-[500px] text-[17px] leading-[1.6] text-slate-500 font-inter font-medium">
-              Mashion cung cấp giải pháp đồng phục trọn gói: từ thiết kế – may mẫu – in thêu – sản xuất với chất lượng chuẩn xưởng và tiến độ nhanh.
+            <p className="mb-10 max-w-[500px] text-[17px] leading-[1.6] text-slate-500 font-medium">
+              Thiết kế và sản xuất đồng phục doanh nghiệp, nhà hàng, spa, sự kiện với form dáng hiện đại, chất liệu bền đẹp và nhận diện thương hiệu chuyên nghiệp.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-              <a href="#contact" className="inline-flex h-[52px] items-center justify-center rounded-full bg-[#111827] px-8 text-[15px] font-bold text-white shadow-[0_12px_24px_rgba(17,24,39,0.2)] transition-transform hover:scale-105 w-full sm:w-auto">
-                Nhận báo giá ngay
+            <div className="flex flex-col sm:flex-row items-center gap-5">
+              <a href="#contact" className="inline-flex h-[52px] items-center justify-center rounded-full bg-[#111827] px-8 text-[15px] font-bold text-white transition hover:bg-slate-800 w-full sm:w-auto shadow-lg shadow-slate-900/20">
+                Nhận tư vấn miễn phí
               </a>
               
-              {/* Fake Avatar Reviews replacing the 4 features to perfectly match the image layout */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3">
                 <div className="flex -space-x-3">
-                  <img className="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="User 1"/>
-                  <img className="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop" alt="User 2"/>
-                  <img className="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="User 3"/>
-                  <div className="w-10 h-10 rounded-full border-2 border-white bg-slate-900 text-white flex items-center justify-center text-[12px] font-bold z-10">+</div>
+                  <img className="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="User"/>
+                  <img className="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop" alt="User"/>
+                  <div className="w-10 h-10 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center text-[12px] font-bold z-10 text-slate-600">+</div>
                 </div>
                 <div>
                   <div className="flex items-center text-[#F59E0B] gap-0.5">
-                    <LineIcon type="star" size={14}/>
-                    <LineIcon type="star" size={14}/>
-                    <LineIcon type="star" size={14}/>
-                    <LineIcon type="star" size={14}/>
-                    <LineIcon type="star" size={14}/>
-                    <span className="text-[#111827] font-bold text-[14px] ml-1">4.9</span>
+                    <LineIcon type="star" size={12}/>
+                    <LineIcon type="star" size={12}/>
+                    <LineIcon type="star" size={12}/>
+                    <LineIcon type="star" size={12}/>
+                    <LineIcon type="star" size={12}/>
+                    <span className="text-[#111827] font-bold text-[13px] ml-1">4.9</span>
                   </div>
-                  <p className="text-[12px] font-medium text-slate-500 font-inter">Từ 500+ doanh nghiệp</p>
+                  <p className="text-[11px] font-semibold text-slate-500">Từ 500+ doanh nghiệp</p>
                 </div>
               </div>
             </div>
+            
+            <p className="mt-8 text-[12px] font-semibold text-slate-400 flex items-center gap-3">
+              <LineIcon type="check" size={14} className="text-slate-400" /> Thiết kế theo yêu cầu <span className="opacity-40">|</span> Nhận may số lượng lớn
+            </p>
           </motion.div>
 
-          {/* Right Content - Floating SaaS Widgets matching the image */}
-          <motion.div variants={fadeUp} className="relative mt-16 lg:mt-0 flex justify-center lg:justify-end min-h-[500px]">
-            <div className="relative w-full max-w-[650px] h-full flex items-center justify-center">
-              
-              {/* Widget 1: Top Left - May mẫu 48h */}
-              <div className="absolute top-[5%] left-[5%] bg-white rounded-2xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-slate-100 w-[240px] z-20 transition hover:-translate-y-1">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-[#EEF2FF] text-[#3b82f6] flex items-center justify-center">
-                      <LineIcon type="shirt" size={16} />
-                    </div>
-                    <div>
-                      <p className="text-[13px] font-bold text-[#111827] leading-none">May mẫu 48h</p>
-                      <p className="text-[10px] text-slate-400 mt-1 font-inter">Duyệt mẫu siêu tốc</p>
-                    </div>
+          {/* HERO RIGHT - KEEP LARGE SHIRTS AND 3 CARDS RATIO */}
+          <motion.div variants={fadeUp} initial="hidden" animate="show" className="relative self-stretch min-h-[640px] overflow-visible">
+
+            {/* Soft lavender gradient arc behind shirts */}
+            <div className="absolute right-[-18%] top-[-20%] w-[700px] h-[700px] rounded-full z-0 pointer-events-none"
+              style={{ background: 'radial-gradient(circle, rgba(196,181,253,0.32) 0%, rgba(196,181,253,0.10) 48%, transparent 70%)' }} />
+            <div className="absolute right-[-5%] bottom-[-10%] w-[450px] h-[450px] rounded-full z-0 pointer-events-none"
+              style={{ background: 'radial-gradient(circle, rgba(253,200,180,0.18) 0%, transparent 65%)' }} />
+
+            {/* 3 Glass Cards — left side */}
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-4 w-[210px]">
+              {[
+                { icon: 'shirt',   title: 'May mẫu 48h',     desc: 'Duyệt mẫu nhanh chóng trước khi sản xuất' },
+                { icon: 'factory', title: 'Xưởng sản xuất',  desc: 'Năng lực 50.000+ sản phẩm mỗi tháng' },
+                { icon: 'check',   title: 'QC 3 bước',        desc: 'Kiểm soát chất lượng chặt chẽ', blue: true },
+              ].map(c => (
+                <div key={c.title} className="bg-white/80 backdrop-blur-2xl rounded-2xl px-5 py-4 shadow-[0_8px_24px_rgba(0,0,0,0.06)] border border-white/90 flex gap-3 hover:-translate-y-0.5 transition-transform">
+                  <div className={`shrink-0 pt-0.5 ${c.blue ? 'text-blue-500' : 'text-indigo-400'}`}>
+                    <LineIcon type={c.icon} size={18} />
                   </div>
-                  <LineIcon type="dots" size={16} className="text-slate-400" />
-                </div>
-                {/* Progress UI Mock */}
-                <div className="flex items-center -space-x-2 mb-3">
-                   <div className="w-6 h-6 rounded-full bg-slate-200 border-2 border-white"></div>
-                   <div className="w-6 h-6 rounded-full bg-slate-300 border-2 border-white"></div>
-                   <div className="w-6 h-6 rounded-full bg-slate-400 border-2 border-white"></div>
-                   <div className="ml-4 text-[11px] text-slate-500 font-bold flex-1 text-right">54%</div>
-                </div>
-                <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
-                   <div className="w-[54%] bg-[#111827] h-full rounded-full"></div>
-                </div>
-              </div>
-
-              {/* Widget 2: Center Right - Filter Style / QC */}
-              <div className="absolute top-[15%] right-[0%] bg-white rounded-3xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-slate-100 w-[280px] z-10 transition hover:-translate-y-1">
-                <p className="text-[14px] font-bold text-[#111827] mb-3">Kiểm duyệt QC</p>
-                <div className="relative mb-4">
-                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"><LineIcon type="search" size={14}/></span>
-                  <input type="text" className="w-full bg-slate-50 border border-slate-200 rounded-lg py-2 pl-8 pr-3 text-[12px] font-inter text-slate-600 outline-none" placeholder="Tìm mã đơn hàng..." />
-                </div>
-                <p className="text-[11px] font-semibold text-slate-500 mb-2">Quy trình:</p>
-                <div className="flex items-center gap-2 mb-3 flex-wrap">
-                   <span className="px-3 py-1 bg-[#EEF2FF] text-[#3b82f6] text-[11px] font-bold rounded-md flex items-center gap-1">Cắt vải <span className="opacity-50 text-[10px]">✕</span></span>
-                   <span className="px-3 py-1 bg-[#FDF4FF] text-[#d946ef] text-[11px] font-bold rounded-md flex items-center gap-1">In thêu <span className="opacity-50 text-[10px]">✕</span></span>
-                </div>
-                <div className="flex items-center justify-between border border-slate-100 rounded-lg p-2 mb-4">
-                   <span className="text-[11px] text-slate-500 font-inter">Kiểm tra đường may...</span>
-                   <LineIcon type="check" size={12} className="text-slate-400"/>
-                </div>
-                <div className="flex gap-2">
-                  <button className="flex-1 py-2 bg-slate-100 text-slate-600 rounded-lg text-[12px] font-bold">Hủy</button>
-                  <button className="flex-1 py-2 bg-[#111827] text-white rounded-lg text-[12px] font-bold">Lọc ngay</button>
-                </div>
-              </div>
-
-              {/* Widget 3: Bottom Center - Xưởng sản xuất */}
-              <div className="absolute bottom-[5%] left-[20%] bg-white rounded-2xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-slate-100 w-[300px] z-30 transition hover:-translate-y-1">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-[16px] font-bold text-[#111827]">Xưởng sản xuất</h3>
-                  <span className="bg-[#ECFDF5] text-[#059669] px-2 py-1 rounded-md text-[10px] font-bold flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-[#059669]"></span> Hoạt động</span>
-                </div>
-                <p className="text-[12px] text-slate-500 font-inter leading-[1.5] mb-4">
-                  Năng lực sản xuất 50.000+ sản phẩm mỗi tháng. Tối ưu hóa chuỗi cung ứng với Mashion Workspace.
-                </p>
-                <div className="flex gap-3">
-                  <button className="flex-1 py-2.5 bg-slate-50 border border-slate-200 text-[#111827] rounded-lg text-[12px] font-bold">Quản lý</button>
-                  <button className="flex-1 py-2.5 bg-[#FFF1F2] text-[#E11D48] rounded-lg text-[12px] font-bold">Báo cáo</button>
-                </div>
-              </div>
-
-              {/* Widget 4: Floating little card */}
-               <div className="absolute top-[40%] left-[0%] bg-white rounded-xl p-3 shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-slate-100 w-[200px] z-25 flex items-center gap-3 transition hover:-translate-y-1">
-                 <div className="w-8 h-8 rounded-full bg-[#111827] text-white flex items-center justify-center">
-                   <LineIcon type="play" size={12} className="ml-0.5" />
-                 </div>
-                 <div className="flex-1">
-                   <p className="text-[11px] font-bold text-[#111827]">Video quy trình</p>
-                   <p className="text-[9px] text-slate-400 font-inter">Xưởng cắt may</p>
-                 </div>
-                 <span className="text-[#F59E0B]"><LineIcon type="star" size={12}/></span>
-               </div>
-
-            </div>
-          </motion.div>
-        </motion.div>
-
-        {/* Partners Section exactly like the image (centered, horizontal text logos) */}
-        <motion.div variants={fadeUp} initial="hidden" animate="show" className="mx-auto mt-28 max-w-[1100px]">
-          <div className="flex flex-wrap items-center justify-center gap-8 md:justify-between w-full opacity-60 grayscale filter contrast-125">
-            <span className="text-[22px] font-black tracking-[-0.05em] text-slate-800 uppercase flex items-center gap-2">
-              <span className="text-[#E11D48]">VINFAST</span>
-            </span>
-            <span className="text-[18px] font-black tracking-tight text-slate-800 flex items-center gap-1.5">
-              <LineIcon type="palette" size={20}/> Vietcombank
-            </span>
-            <span className="text-[24px] font-extrabold text-slate-800 font-inter tracking-tight">Wealthsimple</span>
-            <span className="text-[22px] font-bold text-slate-800 flex items-center gap-1.5">
-               <LineIcon type="database" size={20}/> databricks
-            </span>
-            <span className="text-[20px] font-black tracking-tight text-slate-800 flex items-center gap-1">
-              <span className="flex -space-x-1 opacity-80"><span className="w-4 h-4 rounded-full bg-slate-800"></span><span className="w-4 h-4 rounded-full bg-slate-500"></span></span> Medium
-            </span>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* KEEP THE REST OF THE SECTIONS IDENTICAL */}
-      
-      {/* Stats Section */}
-      <section className="px-5 py-8 md:px-8 md:py-12 relative z-10 mt-10 border-t border-slate-100">
-        <div className="mx-auto grid max-w-[1300px] gap-5 md:grid-cols-4">
-          {stats.map((item) => (
-            <GlassCard key={item.label} className="flex items-center gap-4 p-5 !bg-transparent !border-0 !shadow-none">
-              <span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#3b82f6]/10 text-[#3b82f6]"><LineIcon type="users" size={22} /></span>
-              <div>
-                <p className="text-2xl font-extrabold tracking-tight text-[#111827]"><CountUp value={item.value} suffix={item.suffix} /></p>
-                <p className="text-xs font-semibold text-slate-500 font-inter">{item.label}</p>
-              </div>
-            </GlassCard>
-          ))}
-        </div>
-      </section>
-
-      <section id="solutions" className="px-5 py-12 md:px-8 md:py-20 relative z-10 bg-white">
-        <div className="mx-auto max-w-[1300px]">
-          <div className="grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
-            <GlassCard className="p-6 md:p-10 !bg-slate-50 !border-slate-100 !shadow-none">
-              <SectionTitle eyebrow="Giải pháp toàn diện" title="Đồng phục cho mọi ngành nghề" />
-              <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-                {industries.map((item) => (
-                  <div key={item.title} className="rounded-[20px] border border-slate-200 bg-white p-4 shadow-sm hover:shadow-md transition cursor-pointer">
-                    <span className="mb-6 grid h-11 w-11 place-items-center rounded-2xl bg-[#3b82f6]/10 text-[#3b82f6]"><LineIcon type={item.icon} size={20} /></span>
-                    <p className="mb-4 text-[13px] font-bold text-slate-800 leading-tight">{item.title}</p>
-                    <span className="text-sm text-slate-400 font-bold">→</span>
+                  <div>
+                    <h4 className="text-[12px] font-bold text-[#111827] mb-0.5">{c.title}</h4>
+                    <p className="text-[10px] text-slate-500 leading-relaxed">{c.desc}</p>
                   </div>
-                ))}
-              </div>
-            </GlassCard>
-
-            <GlassCard id="process" className="p-6 md:p-10 !bg-slate-50 !border-slate-100 !shadow-none">
-              <SectionTitle eyebrow="Quy trình 5 bước" title="Đơn giản – Nhanh chóng – Minh bạch" />
-              <div className="relative grid gap-4 md:grid-cols-5 pt-4">
-                <div className="pointer-events-none absolute left-[10%] right-[10%] top-[40px] hidden border-t border-dashed border-slate-300 md:block" />
-                {process.map((item, index) => (
-                  <div key={item.title} className="relative z-10 text-center">
-                    <span className="mx-auto mb-3 block text-[10px] font-black tracking-wider" style={{ color: item.color }}>0{index + 1}</span>
-                    <div className="mx-auto mb-4 grid h-14 w-14 place-items-center rounded-full shadow-sm bg-white" style={{ color: item.color }}>
-                      <LineIcon type={item.icon} size={22} />
-                    </div>
-                    <h4 className="mb-1 text-[13px] font-bold text-slate-900">{item.title}</h4>
-                    <p className="text-[11px] leading-[1.6] text-slate-500 font-inter">{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </GlassCard>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-5 py-10 md:px-8 md:py-16 relative z-10 bg-white">
-        <div className="mx-auto max-w-[1300px]">
-          <SectionTitle eyebrow="Dịch vụ nổi bật" title="Thiết kế, may mẫu, in thêu trọn gói" desc="Tập trung vào tính thẩm mỹ, độ bền và sự đồng nhất nhận diện cho từng mô hình doanh nghiệp." />
-          <div ref={sliderRef} className="no-scrollbar flex gap-6 overflow-x-auto pb-6 md:grid md:grid-cols-3 md:overflow-visible">
-            {solutions.map((item) => (
-              <GlassCard key={item.title} className="min-w-[82vw] overflow-hidden md:min-w-0 p-0 hover:shadow-xl transition-shadow !border-slate-100 !shadow-md">
-                <img src={item.image} alt={item.title} className="h-56 w-full object-cover" />
-                <div className="p-8">
-                  <span className="mb-5 grid h-12 w-12 place-items-center rounded-2xl" style={{ backgroundColor: `${item.color}18`, color: item.color }}><LineIcon type={item.icon} size={22} /></span>
-                  <h4 className="mb-3 text-xl font-extrabold tracking-tight text-[#111827]">{item.title}</h4>
-                  <p className="text-sm leading-relaxed text-slate-500 font-inter">{item.desc}</p>
                 </div>
-              </GlassCard>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="works" className="px-5 py-12 md:px-8 md:py-20 relative z-10 bg-[#FAFAFD] border-t border-slate-100">
-        <div className="mx-auto max-w-[1300px]">
-          <SectionTitle eyebrow="Selected Works" title="Case study tinh gọn, tăng độ tin cậy" desc="Các dự án được trình bày rõ bài toán, quy mô và kết quả để khách hàng dễ hình dung." />
-          <div className="grid gap-6 md:grid-cols-2">
-            {cases.map((item) => (
-              <GlassCard key={item.title} className="overflow-hidden p-0 group cursor-pointer !border-slate-200 !shadow-sm hover:!shadow-xl transition-all">
-                <div className="overflow-hidden h-72 relative">
-                   <div className="absolute inset-0 bg-[#111827]/10 group-hover:bg-transparent transition-colors z-10"></div>
-                   <img src={item.image} alt={item.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
-                <div className="p-8">
-                  <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#3b82f6]">{item.meta}</p>
-                  <h4 className="text-2xl font-extrabold tracking-tight text-[#111827]">{item.title}</h4>
-                </div>
-              </GlassCard>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <footer id="contact" className="px-5 pb-28 pt-12 md:px-8 md:pb-16 md:pt-20 relative z-10 bg-white border-t border-slate-100">
-        <div className="mx-auto grid max-w-[1300px] gap-12 md:grid-cols-[0.85fr_1.15fr] items-center">
-          <div>
-            <p className="mb-4 text-[10px] font-bold uppercase tracking-[0.3em] text-[#3b82f6]">Nhận báo giá trong 24h</p>
-            <h4 className="mb-6 text-5xl font-extrabold tracking-tight text-[#111827] md:text-7xl">Báo giá.</h4>
-            <p className="max-w-md text-[16px] leading-[1.6] text-slate-500 font-inter">Gửi nhu cầu, số lượng và logo thương hiệu. Mashion sẽ tư vấn chất liệu, demo thiết kế trong 48h.</p>
-          </div>
-
-          <GlassCard className="p-8 md:p-10 !bg-[#FAFAFD] !border-slate-200 !shadow-none">
-            <h5 className="mb-8 text-2xl font-extrabold tracking-tight text-[#111827]">Nhận tư vấn & báo giá nhanh</h5>
-            <div className="grid gap-5 md:grid-cols-2">
-              {['Tên doanh nghiệp', 'Loại đồng phục', 'Số lượng dự kiến', 'Số điện thoại / Zalo'].map((field) => (
-                <label key={field} className="rounded-xl border border-slate-200 bg-white px-5 py-3 focus-within:border-[#3b82f6] focus-within:ring-2 focus-within:ring-[#3b82f6]/20 transition">
-                  <span className="mb-1.5 block text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">{field}</span>
-                  <input className="w-full bg-transparent text-[14px] font-bold text-slate-800 outline-none placeholder:text-slate-300 font-inter" placeholder="Nhập thông tin" />
-                </label>
               ))}
             </div>
-            <button className="mt-8 w-full rounded-xl bg-[#111827] px-7 py-4 text-[15px] font-bold text-white shadow-[0_12px_24px_rgba(17,24,39,0.2)] transition hover:-translate-y-1">Gửi yêu cầu tư vấn →</button>
-          </GlassCard>
+
+            {/* Shirts — fills the right side, very large */}
+            <div className="absolute right-[-8%] top-[-12%] bottom-[-12%] left-[26%] z-10">
+              <img
+                src="hero-shirts.png"
+                className="w-full h-full object-contain object-center drop-shadow-[0_30px_80px_rgba(0,0,0,0.13)]"
+                alt="Mashion Polo Shirts"
+                onError={(e) => {
+                  e.target.src = 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1400&auto=format&fit=crop';
+                  e.target.className = 'w-full h-full object-cover rounded-3xl';
+                }}
+              />
+            </div>
+
+          </motion.div>
+        </div>
+
+        {/* Partner logos */}
+        <div className="relative z-10 mx-auto max-w-[1100px] px-6 md:px-10 border-t border-slate-200/50 py-8 mt-12">
+          <div className="flex flex-wrap items-center justify-between w-full opacity-45 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+            <span className="text-[18px] font-black text-slate-800 uppercase tracking-tight">VINFAST</span>
+            <span className="text-[17px] font-black text-slate-800">Vietcombank</span>
+            <span className="text-[20px] font-extrabold text-slate-800 italic">FPT</span>
+            <span className="text-[16px] font-bold text-slate-800">thegioididong</span>
+            <span className="text-[18px] font-black text-slate-800">BIDV</span>
+            <span className="text-[16px] font-bold text-slate-800">VPBank</span>
+            <span className="text-[16px] font-bold text-slate-800">Sun Life</span>
+          </div>
+        </div>
+      </section>
+
+
+      {/* 04. Mẫu đồng phục nổi bật */}
+      <motion.section initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }} variants={stagger} id="products" className="py-24 px-4 md:px-8 max-w-[1200px] mx-auto">
+        <motion.div variants={fadeUp}><SectionTitle eyebrow="Product Highlights" title="Mẫu đồng phục nổi bật" desc="Những thiết kế được tinh chỉnh phù hợp cho từng mục đích sử dụng, tối ưu sự thoải mái và độ bền." /></motion.div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {products.slice(0,3).map((item, idx) => (
+            <motion.div variants={fadeUp} key={item.title} className={`${item.color} rounded-3xl p-8 flex flex-col transition hover:-translate-y-1 hover:shadow-lg cursor-pointer group`}>
+              <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-blue-600 mb-6 transition-transform group-hover:scale-110">
+                <LineIcon type={idx === 0 ? 'shirt' : idx === 1 ? 'users' : 'building'} size={20} />
+              </div>
+              <h4 className="text-[20px] font-extrabold text-[#111827] mb-3">{item.title}</h4>
+              <p className="text-[14px] leading-[1.6] text-slate-600 mb-8">{item.desc}</p>
+              
+              <div className="mt-auto overflow-hidden rounded-2xl h-48 border border-white/40 shadow-sm">
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
+      {/* 05. Vì sao chọn Mashion? */}
+      <section className="py-24 px-4 md:px-8 bg-white border-y border-slate-100 overflow-hidden">
+        <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="max-w-[1200px] mx-auto">
+          <motion.div variants={fadeUp}><SectionTitle eyebrow="Core Features" title="Vì sao doanh nghiệp chọn Mashion?" desc="Mọi thứ bạn mong đợi từ một xưởng may đồng phục chuyên nghiệp." /></motion.div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {benefits.map((item) => (
+              <motion.div variants={fadeUp} key={item.title} className="p-8 rounded-2xl bg-[#FAFAFA] border border-slate-100 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 group">
+                <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 transition-transform group-hover:scale-110">
+                  <LineIcon type={item.icon} size={20} />
+                </div>
+                <h4 className="text-[16px] font-bold text-[#111827] mb-3">{item.title}</h4>
+                <p className="text-[13px] leading-[1.6] text-slate-500">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* 03. Ngành hàng đồng phục & 06. Quy trình */}
+      <section id="categories" className="py-24 px-4 md:px-8 max-w-[1200px] mx-auto grid lg:grid-cols-[1fr_350px] gap-12 items-start">
+        <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }} variants={stagger}>
+          <motion.h2 variants={fadeUp} className="mb-4 text-[32px] font-extrabold leading-[1.1] tracking-tight text-[#111827]">
+            Giải pháp đồng phục cho mọi ngành nghề
+          </motion.h2>
+          <motion.p variants={fadeUp} className="mb-10 text-[15px] leading-[1.6] text-slate-500">Chúng tôi thiết kế những bộ đồng phục không chỉ đẹp mà còn tối ưu công năng cho từng ngành nghề đặc thù.</motion.p>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {industries.map((item) => (
+              <motion.div variants={fadeUp} key={item.title} className="p-5 rounded-2xl bg-white border border-slate-200 hover:border-blue-400 hover:shadow-md transition text-center cursor-pointer group">
+                <LineIcon type={item.icon} size={24} className="text-slate-400 mx-auto mb-3 transition-colors group-hover:text-blue-500" />
+                <p className="text-[13px] font-bold text-[#111827]">{item.title}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* 06. Quy trình */}
+        <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }} variants={fadeUp} className="bg-slate-900 rounded-3xl p-8 text-white shadow-2xl">
+          <h3 className="text-[20px] font-extrabold mb-6">Quy trình đặt may</h3>
+          <div className="flex flex-col gap-6 relative">
+            <div className="absolute left-[11px] top-4 bottom-4 w-px bg-slate-700"></div>
+            {process.map((item, idx) => (
+              <div key={item.title} className="flex gap-4 relative z-10 group">
+                <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5 shadow-[0_0_10px_rgba(37,99,235,0.5)] group-hover:scale-110 transition-transform">
+                  {idx + 1}
+                </div>
+                <div>
+                  <h4 className="text-[14px] font-bold mb-1">{item.title}</h4>
+                  <p className="text-[12px] text-slate-400">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* 09. Con số thương hiệu */}
+      <section className="py-20 border-y border-slate-100 bg-white">
+        <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="max-w-[1000px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 px-4 text-center">
+          {stats.map((item) => (
+            <motion.div variants={fadeUp} key={item.label}>
+              <p className="text-[32px] md:text-[40px] font-extrabold text-[#111827] tracking-tight">
+                <CountUp value={item.value} suffix={item.suffix} />
+              </p>
+              <p className="text-[13px] font-medium text-slate-500 mt-1 uppercase tracking-wide">{item.label}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* 07. Hình ảnh thực tế (Gallery) */}
+      <motion.section initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }} variants={stagger} id="works" className="py-24 px-4 md:px-8 max-w-[1200px] mx-auto">
+        <motion.div variants={fadeUp} className="flex flex-col md:flex-row md:items-end justify-between mb-10">
+          <SectionTitle eyebrow="Gallery" title="Hình ảnh thực tế" align="left" />
+          <a href="#" className="inline-flex items-center gap-2 text-[14px] font-bold text-blue-600 hover:text-blue-800 mb-12 md:mb-16 transition-colors">
+            Xem tất cả dự án <LineIcon type="arrowRight" size={16} />
+          </a>
+        </motion.div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {cases.map((item) => (
+            <motion.div variants={fadeUp} key={item.title} className="group overflow-hidden rounded-3xl bg-slate-50 border border-slate-100 cursor-pointer shadow-sm hover:shadow-lg transition-all duration-300">
+              <div className="h-64 overflow-hidden relative">
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-[#111827]">
+                  {item.meta}
+                </div>
+              </div>
+              <div className="p-6 bg-white">
+                <h4 className="text-[16px] font-bold text-[#111827]">{item.title}</h4>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
+      {/* NEW: FAQ Section */}
+      <section className="py-24 px-4 md:px-8 bg-white border-t border-slate-100">
+        <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }} variants={stagger} className="max-w-[800px] mx-auto">
+          <motion.div variants={fadeUp}><SectionTitle eyebrow="FAQ" title="Các câu hỏi thường gặp" desc="Giải đáp nhanh các thắc mắc phổ biến khi đặt may đồng phục tại Mashion." /></motion.div>
+          
+          <div className="mt-8 flex flex-col gap-4">
+            {faqs.map((faq, idx) => (
+              <motion.div variants={fadeUp} key={idx} className="border border-slate-200 rounded-2xl overflow-hidden bg-[#FAFAFA] transition-colors hover:border-blue-200">
+                <button 
+                  onClick={() => setOpenFaq(openFaq === idx ? -1 : idx)}
+                  className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
+                >
+                  <span className="text-[15px] font-bold text-[#111827]">{faq.q}</span>
+                  <span className={`text-slate-400 transition-transform duration-300 ${openFaq === idx ? 'rotate-180' : ''}`}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </span>
+                </button>
+                <div className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${openFaq === idx ? 'max-h-40 pb-5 opacity-100' : 'max-h-0 opacity-0'}`}>
+                  <p className="text-[14px] text-slate-500 leading-relaxed">{faq.a}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* 10. CTA Cuối trang */}
+      <section className="py-10 px-4 md:px-8 mb-20 max-w-[1200px] mx-auto">
+        <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-50px" }} variants={fadeUp} className="relative rounded-[40px] overflow-hidden bg-white shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-slate-100 p-10 md:p-20 text-center">
+          {/* Internal Mesh Gradient - RICHER */}
+          <div className="absolute inset-0 z-0 opacity-[0.55]">
+            <div className="absolute top-[-20%] right-[10%] w-[500px] h-[500px] bg-[#7AC5FF] rounded-full blur-[100px]"></div>
+            <div className="absolute bottom-[-10%] left-[10%] w-[500px] h-[500px] bg-[#FF9A76] rounded-full blur-[100px]"></div>
+          </div>
+
+          <div className="relative z-10 max-w-[700px] mx-auto">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-[11px] font-bold tracking-[0.1em] text-blue-600">
+              <LineIcon type="sparkles" size={14} /> Ready to start?
+            </div>
+            <h2 className="text-[40px] md:text-[56px] font-extrabold text-[#111827] leading-[1.05] tracking-tight mb-6">
+              Bạn cần thiết kế đồng phục cho doanh nghiệp?
+            </h2>
+            <p className="text-[16px] text-slate-500 mb-10 max-w-[500px] mx-auto">
+              Đội ngũ Mashion sẵn sàng tư vấn mẫu mã, chất liệu và giải pháp đồng phục phù hợp với ngân sách của bạn.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <button className="px-8 py-4 bg-[#111827] text-white rounded-full text-[15px] font-bold shadow-lg shadow-slate-900/20 hover:scale-105 transition">
+                Nhận báo giá ngay
+              </button>
+              <button className="px-8 py-4 bg-white border border-slate-200 text-[#111827] rounded-full text-[15px] font-bold hover:bg-slate-50 transition flex items-center justify-center gap-2">
+                Chat Zalo tư vấn
+              </button>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* 11. Footer */}
+      <footer id="contact" className="bg-[#111827] text-white pt-20 pb-10">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div className="md:col-span-1">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="grid h-6 w-6 place-items-center rounded bg-[#3b82f6] text-white">
+                  <span className="font-extrabold text-[14px] leading-none italic mt-[-1px]">M</span>
+                </div>
+                <span className="text-[16px] font-extrabold tracking-tight text-white">MASHION</span>
+              </div>
+              <p className="text-[13px] text-slate-400 leading-[1.6]">
+                Thiết kế hiện đại, sản xuất chất lượng, nâng tầm nhận diện thương hiệu.
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="text-[13px] font-bold mb-6 tracking-wide">Sản phẩm</h4>
+              <ul className="flex flex-col gap-4 text-[13px] text-slate-400">
+                <li><a href="#" className="hover:text-white transition">Áo thun đồng phục</a></li>
+                <li><a href="#" className="hover:text-white transition">Đồng phục công sở</a></li>
+                <li><a href="#" className="hover:text-white transition">Đồng phục nhà hàng</a></li>
+                <li><a href="#" className="hover:text-white transition">Đồng phục Spa</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="text-[13px] font-bold mb-6 tracking-wide">Công ty</h4>
+              <ul className="flex flex-col gap-4 text-[13px] text-slate-400">
+                <li><a href="#" className="hover:text-white transition">Giới thiệu</a></li>
+                <li><a href="#" className="hover:text-white transition">Dự án thực tế</a></li>
+                <li><a href="#" className="hover:text-white transition">Tin tức</a></li>
+                <li><a href="#" className="hover:text-white transition">Tuyển dụng</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="text-[13px] font-bold mb-6 tracking-wide">Liên hệ</h4>
+              <ul className="flex flex-col gap-4 text-[13px] text-slate-400">
+                <li>0900.000.000</li>
+                <li>hello@mashion.vn</li>
+                <li>123 Đường Uniform, Q.1, HCM</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-[12px] text-slate-500">© 2026 Mashion Uniform Brand Studio. All rights reserved.</p>
+            <div className="flex gap-4">
+              <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white transition"><LineIcon type="users" size={14}/></a>
+              <a href="#" className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white transition"><LineIcon type="phone" size={14}/></a>
+            </div>
+          </div>
         </div>
       </footer>
 
-      {/* Floating Action Buttons */}
-      <div className="fixed right-5 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-3 md:flex">
-        {[
-          ['consult', 'Zalo'],
-          ['phone', 'Gọi'],
-          ['document', 'Báo giá'],
-        ].map((item) => (
-          <a key={item[1]} href="#contact" className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-3 text-[10px] font-bold uppercase tracking-[0.1em] text-slate-700 shadow-sm hover:shadow-md transition">
-            <LineIcon type={item[0]} size={18} className="text-[#3b82f6]" />
-            {item[1]}
-          </a>
-        ))}
-      </div>
+      {/* Mobile Menu */}
+      <motion.aside initial={false} animate={{ x: menuOpen ? '0%' : '100%' }} transition={{ duration: 0.3 }} className="fixed inset-0 z-[70] flex flex-col bg-white px-6 py-20 text-[#111827] md:hidden">
+        <button onClick={() => setMenuOpen(false)} className="absolute right-6 top-7 font-bold text-[12px] uppercase tracking-widest text-slate-400">Đóng</button>
+        <div className="mt-8 flex flex-col gap-6">
+          {navItems.map((item) => (
+            <a key={item.label} href={item.href} onClick={() => setMenuOpen(false)} className="text-[24px] font-extrabold text-[#111827] tracking-tight">
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </motion.aside>
 
-      {mobileContactOpen && (
-        <button type="button" className="fixed inset-0 z-30 bg-black/10 backdrop-blur-sm md:hidden" aria-label="Đóng liên hệ nhanh" onClick={() => setMobileContactOpen(false)} />
-      )}
-
-      {/* Mobile Bottom Bar */}
-      <div className="fixed inset-x-0 bottom-0 z-40 px-5 pb-5 md:hidden">
-        <motion.div initial={false} animate={mobileContactOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }} transition={{ duration: 0.28, ease: 'easeOut' }} className={`mb-3 rounded-[24px] border border-slate-200 bg-white p-3 shadow-2xl ${mobileContactOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}>
-          <div className="grid grid-cols-3 gap-2">
-            {[
-              { label: 'Zalo', icon: 'consult', href: '#contact' },
-              { label: 'Gọi', icon: 'phone', href: 'tel:0900000000' },
-              { label: 'Báo giá', icon: 'document', href: '#contact' },
-            ].map((item) => <a key={item.label} href={item.href} onClick={() => setMobileContactOpen(false)} className="flex flex-col items-center justify-center rounded-[20px] bg-slate-50 px-2 py-4 text-[10px] font-bold uppercase tracking-[0.1em] text-slate-800"><span className="mb-2 flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#3b82f6] shadow-sm"><LineIcon type={item.icon} size={20} /></span>{item.label}</a>)}
-          </div>
-        </motion.div>
-        <motion.button type="button" initial={{ y: 100 }} animate={{ y: scrolled ? 0 : 100 }} transition={{ duration: 0.45, ease: 'easeOut' }} onClick={() => setMobileContactOpen((value) => !value)} className="relative ml-auto flex h-[56px] w-[56px] items-center justify-center rounded-full bg-[#111827] text-white shadow-lg" aria-label="Mở liên hệ nhanh">
-          <LineIcon type={mobileContactOpen ? 'check' : 'consult'} size={24} />
-        </motion.button>
-      </div>
     </div>
   )
 }

@@ -6,4 +6,5 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   base: '/Mashion.vn/',
   plugins: [react(), tailwindcss()],
+  base: './',
 })
