@@ -1,26 +1,13 @@
 @import "tailwindcss";
 
-/* redeploy trigger */
-/* Kéo 3 ô hero sát cụm ảnh hơn trên desktop */
+/* Chỉnh hero an toàn, không ép layout ảnh */
 @media (min-width: 1024px) {
-  #intro .max-w-\[650px\] > div:nth-child(1) {
-    left: 13% !important;
-    top: 8% !important;
+  #intro > div {
+    gap: 28px !important;
   }
 
-  #intro .max-w-\[650px\] > div:nth-child(2) {
-    right: 7% !important;
-    top: 17% !important;
-  }
-
-  #intro .max-w-\[650px\] > div:nth-child(3) {
-    left: 27% !important;
-    bottom: 8% !important;
-  }
-
-  #intro .max-w-\[650px\] > div:nth-child(4) {
-    left: 11% !important;
-    top: 42% !important;
+  #intro .mt-16 {
+    margin-top: 0 !important;
   }
 }
 
@@ -31,7 +18,7 @@
   }
 
   #intro > div {
-    gap: 20px !important;
+    gap: 18px !important;
   }
 
   #intro h1 {
@@ -56,52 +43,15 @@
   }
 
   #intro .mt-16 {
-    margin-top: 0 !important;
+    margin-top: 8px !important;
   }
 
   #intro .min-h-\[500px\] {
-    min-height: auto !important;
+    min-height: 390px !important;
   }
 
   #intro .max-w-\[650px\] {
     max-width: 100% !important;
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-    align-items: stretch !important;
-  }
-
-  #intro .max-w-\[650px\] > div {
-    position: relative !important;
-    inset: auto !important;
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    bottom: auto !important;
-    width: 100% !important;
-    transform: none !important;
-  }
-
-  /* Mobile giữ 3 ô chính, chỉ ẩn ô video nhỏ để gọn */
-  #intro .max-w-\[650px\] > div:nth-child(4) {
-    display: none !important;
-  }
-
-  #intro .max-w-\[650px\] > div:nth-child(1),
-  #intro .max-w-\[650px\] > div:nth-child(2),
-  #intro .max-w-\[650px\] > div:nth-child(3) {
-    display: block !important;
-    border-radius: 20px !important;
-    padding: 16px !important;
-    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.075) !important;
-  }
-
-  #intro .max-w-\[650px\] > div:nth-child(2) input {
-    height: 34px !important;
-  }
-
-  #intro .max-w-\[650px\] > div:nth-child(3) p {
-    margin-bottom: 12px !important;
   }
 
   #intro .mt-28 {
