@@ -33,6 +33,13 @@ function LineIcon({ type = 'check', size = 20, className = '' }) {
     ),
     star: <path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1L12 2Z" fill="currentColor" strokeWidth="0" />,
     phone: <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 1.9Z" />,
+    menu: (
+      <>
+        <path d="M4 7h16" />
+        <path d="M4 12h16" />
+        <path d="M4 17h16" />
+      </>
+    ),
   }
 
   return (
@@ -79,7 +86,7 @@ export default function App() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#f7f9ff] text-slate-700 antialiased">
       <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-8 md:pt-6">
-        <div className={`glass mx-auto flex max-w-[1180px] items-center justify-between rounded-full px-4 py-3 transition-all md:px-6 ${scrolled ? 'shadow-xl' : 'shadow-sm'}`}>
+        <div className={`site-header-glass mx-auto flex max-w-[1180px] items-center justify-between rounded-full px-4 py-3 transition-all md:px-6 ${scrolled ? 'is-scrolled' : ''}`}>
           <a href="#intro" className="flex items-center gap-2.5">
             <span className="grid h-9 w-9 place-items-center rounded-xl bg-blue-600 text-[19px] font-black italic text-white">M</span>
             <span className="text-[18px] font-extrabold tracking-tight text-slate-950">MASHION</span>
@@ -89,9 +96,12 @@ export default function App() {
             <a href="#why" className="hover:text-blue-600">Lợi ích</a>
             <a href="#contact" className="hover:text-blue-600">Liên hệ</a>
           </nav>
-          <a href="#contact" className="rounded-full bg-blue-600 px-5 py-2.5 text-[13px] font-bold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700">
+          <a href="#contact" className="hidden rounded-full bg-blue-600 px-5 py-2.5 text-[13px] font-bold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700 sm:inline-flex">
             Nhận tư vấn
           </a>
+          <button className="grid h-10 w-10 place-items-center rounded-full text-slate-950 lg:hidden" aria-label="Mở menu">
+            <LineIcon type="menu" size={27} />
+          </button>
         </div>
       </header>
 
