@@ -36,3 +36,46 @@
 header {
   composes: glass;
 }
+
+/* Mobile optimizations */
+@media (max-width: 767px) {
+  /* Header */
+  header {
+    padding: 10px 14px !important;
+    border-radius: 22px !important;
+    box-shadow: 0 8px 24px rgba(15,23,42,0.08) !important;
+  }
+
+  /* Hero */
+  #intro {
+    padding-top: 96px !important;
+    padding-bottom: 28px !important;
+  }
+  #intro .relative.self-stretch {
+    min-height: 350px !important;
+  }
+  #intro .relative.self-stretch > div:nth-child(4) {
+    width: 90vw !important;
+    height: 270px !important;
+    top: -4px !important;
+  }
+
+  /* Badges */
+  #intro .relative.self-stretch > div:nth-child(3) {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+  #intro .relative.self-stretch > div:nth-child(3) > div {
+    padding: 10px 7px !important;
+    border-radius: 16px !important;
+  }
+
+  /* Logo partners */
+  #intro .border-t.border-slate-200\/50 > div {
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    gap: 20px !important;
+    overflow-x: auto !important;
+    padding-bottom: 6px !important;
+  }
+}
