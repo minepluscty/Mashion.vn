@@ -1,215 +1,38 @@
 @import "tailwindcss";
 
+/* Base CSS */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { scrollbar-width: none; }
 
-/* Dùng ảnh thật trong public/hero-shirts.png */
+/* Hero shirt image */
 #intro img[alt="Mashion Polo Shirts"] {
   content: url('/Mashion.vn/hero-shirts.png');
+  object-fit: contain;
 }
 
-@media (max-width: 767px) {
-  /* Header mobile gọn, nhẹ */
-  body > div > div.absolute.top-0 {
-    padding: 14px 14px 0 !important;
-  }
-
-  header {
-    padding: 10px 16px !important;
-    border-radius: 24px !important;
-    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08) !important;
-  }
-
-  header .h-8.w-8 {
-    width: 34px !important;
-    height: 34px !important;
-    border-radius: 10px !important;
-  }
-
-  header span.text-\[18px\] {
-    font-size: 17px !important;
-  }
-
-  /* Hero mobile: sạch, không quá dài */
-  #intro {
-    padding-top: 108px !important;
-    padding-bottom: 28px !important;
-    border-bottom-left-radius: 24px !important;
-    border-bottom-right-radius: 24px !important;
-  }
-
-  #intro > div.relative.z-10.mx-auto {
-    gap: 14px !important;
-  }
-
-  #intro .mb-6.inline-flex {
-    margin-bottom: 14px !important;
-    padding: 5px 12px !important;
-  }
-
-  #intro h1 {
-    font-size: clamp(32px, 9.4vw, 38px) !important;
-    line-height: 1.05 !important;
-    letter-spacing: -0.045em !important;
-    margin-bottom: 12px !important;
-  }
-
-  #intro h1 + p {
-    font-size: 14px !important;
-    line-height: 1.55 !important;
-    margin-bottom: 18px !important;
-  }
-
-  #intro h1 + p + div {
-    gap: 14px !important;
-    align-items: stretch !important;
-  }
-
-  #intro a[href="#contact"] {
-    width: 100% !important;
-    height: 46px !important;
-    font-size: 14px !important;
-    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.16) !important;
-  }
-
-  #intro h1 + p + div > div {
-    justify-content: center !important;
-  }
-
-  #intro h1 + p + div img,
-  #intro h1 + p + div .w-10.h-10 {
-    width: 34px !important;
-    height: 34px !important;
-  }
-
-  #intro p.mt-8 {
-    margin-top: 18px !important;
-    font-size: 10.5px !important;
-    opacity: 0.65 !important;
-    justify-content: center !important;
-  }
-
-  /* Khối ảnh + badge */
-  #intro .relative.self-stretch {
-    min-height: 350px !important;
-    margin-top: -2px !important;
-  }
-
-  #intro .self-stretch {
-    min-height: 350px !important;
-  }
-
-  #intro .relative.self-stretch > div:nth-child(1),
-  #intro .relative.self-stretch > div:nth-child(2) {
-    opacity: 0.36 !important;
-  }
-
-  /* Ảnh áo lớn, cân giữa */
-  #intro .relative.self-stretch > div:nth-child(4) {
-    left: 50% !important;
-    right: auto !important;
-    top: -4px !important;
-    bottom: auto !important;
-    width: min(106vw, 400px) !important;
-    height: 270px !important;
-    transform: translateX(-50%) !important;
-    z-index: 10 !important;
-  }
-
-  #intro img[alt="Mashion Polo Shirts"] {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-  }
-
-  /* 3 ô chuyển thành badge ngang nhỏ, sang hơn */
-  #intro .relative.self-stretch > div:nth-child(3) {
-    left: 0 !important;
-    right: 0 !important;
-    top: auto !important;
-    bottom: 2px !important;
-    transform: none !important;
-    width: 100% !important;
-    display: grid !important;
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 8px !important;
-    z-index: 30 !important;
-  }
-
-  #intro .relative.self-stretch > div:nth-child(3) > div {
-    padding: 10px 7px !important;
-    border-radius: 18px !important;
-    min-height: 74px !important;
-    background: rgba(255, 255, 255, 0.88) !important;
-    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.075) !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 6px !important;
-  }
-
-  #intro .relative.self-stretch > div:nth-child(3) svg {
-    width: 18px !important;
-    height: 18px !important;
-  }
-
-  #intro .relative.self-stretch > div:nth-child(3) h4 {
-    font-size: 11.5px !important;
-    line-height: 1.15 !important;
-    margin: 0 !important;
-  }
-
-  #intro .relative.self-stretch > div:nth-child(3) p {
-    display: none !important;
-  }
-
-  /* Logo đối tác gọn hơn */
-  #intro .border-t.border-slate-200\/50 {
-    margin-top: 16px !important;
-    padding-top: 16px !important;
-    padding-bottom: 8px !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-  #intro .border-t.border-slate-200\/50 > div {
-    flex-wrap: nowrap !important;
-    justify-content: flex-start !important;
-    gap: 22px !important;
-    overflow-x: auto !important;
-    padding-bottom: 6px !important;
-  }
-
-  #intro .border-t.border-slate-200\/50 span {
-    flex: 0 0 auto !important;
-    font-size: 12.5px !important;
-  }
-
-  section {
-    scroll-margin-top: 86px;
-  }
-
-  #products,
-  #works,
-  #categories,
-  section.py-24 {
-    padding-top: 46px !important;
-    padding-bottom: 46px !important;
-  }
-
-  .rounded-\[40px\] {
-    border-radius: 26px !important;
-  }
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-  #intro .relative.self-stretch {
-    min-height: 560px !important;
-  }
+.glass-strong {
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.1);
+}
 
-  #intro .relative.self-stretch > div:nth-child(4) {
-    left: 24% !important;
-    right: -6% !important;
-  }
+/* Apply glass effect to hero badges */
+#intro .relative.self-stretch > div:nth-child(3) > div {
+  composes: glass-strong;
+}
+
+/* Optional: glass effect on header */
+header {
+  composes: glass;
 }
