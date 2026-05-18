@@ -1,81 +1,177 @@
 @import "tailwindcss";
 
-/* Base CSS */
-.no-scrollbar::-webkit-scrollbar { display: none; }
-.no-scrollbar { scrollbar-width: none; }
-
-/* Hero shirt image */
-#intro img[alt="Mashion Polo Shirts"] {
-  content: url('/Mashion.vn/hero-shirts.png');
-  object-fit: contain;
+* {
+  box-sizing: border-box;
 }
 
-/* Glassmorphism effect */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f7f9ff;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
 .glass {
-  background: rgba(255, 255, 255, 0.16);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  box-shadow: 0 16px 44px rgba(15, 23, 42, 0.08);
 }
 
 .glass-strong {
-  background: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.78);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.34);
-  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  box-shadow: 0 16px 42px rgba(15, 23, 42, 0.08);
 }
 
-/* Apply glass effect to hero badges */
-#intro .relative.self-stretch > div:nth-child(3) > div {
-  composes: glass-strong;
+.hero-shirt-image {
+  object-fit: contain;
 }
 
-/* Optional: glass effect on header */
-header {
-  composes: glass;
-}
-
-/* Mobile optimizations */
 @media (max-width: 767px) {
-  /* Header */
   header {
+    padding-top: 12px !important;
+  }
+
+  header > div {
     padding: 10px 14px !important;
-    border-radius: 22px !important;
-    box-shadow: 0 8px 24px rgba(15,23,42,0.08) !important;
+    border-radius: 26px !important;
   }
 
-  /* Hero */
+  header span.grid {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 12px !important;
+    font-size: 20px !important;
+  }
+
+  header span.text-\[18px\] {
+    font-size: 18px !important;
+  }
+
+  header a[href="#contact"] {
+    display: none !important;
+  }
+
   #intro {
-    padding-top: 96px !important;
-    padding-bottom: 28px !important;
-  }
-  #intro .relative.self-stretch {
-    min-height: 350px !important;
-  }
-  #intro .relative.self-stretch > div:nth-child(4) {
-    width: 90vw !important;
-    height: 270px !important;
-    top: -4px !important;
+    padding-top: 104px !important;
+    padding-bottom: 34px !important;
   }
 
-  /* Badges */
-  #intro .relative.self-stretch > div:nth-child(3) {
+  #intro > div.relative.z-10 {
+    gap: 18px !important;
+  }
+
+  #intro .glass.mb-5 {
+    margin-bottom: 14px !important;
+    max-width: 100% !important;
+    padding: 6px 12px !important;
+    font-size: 10px !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  #intro h1 {
+    max-width: 100% !important;
+    font-size: clamp(32px, 9.3vw, 38px) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.052em !important;
+    text-align: left !important;
+  }
+
+  #intro p {
+    text-align: left !important;
+  }
+
+  #intro h1 + p {
+    margin-top: 16px !important;
+    font-size: 14.5px !important;
+    line-height: 1.58 !important;
+  }
+
+  #intro .mt-7 {
+    margin-top: 22px !important;
+    align-items: stretch !important;
+  }
+
+  #intro .mt-7 > a {
+    height: 48px !important;
+    width: 100% !important;
+    font-size: 14px !important;
+    border-radius: 999px !important;
+  }
+
+  #intro .mt-7 > div {
+    justify-content: center !important;
+  }
+
+  .hero-visual {
+    min-height: 360px !important;
+    max-width: 100% !important;
+    margin-top: 4px !important;
+  }
+
+  .hero-visual > div:first-child {
+    border-radius: 32px !important;
+  }
+
+  .hero-shirt-image {
+    top: 0 !important;
+    width: min(110vw, 390px) !important;
+    height: 265px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .hero-badges {
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     gap: 8px !important;
   }
-  #intro .relative.self-stretch > div:nth-child(3) > div {
-    padding: 10px 7px !important;
-    border-radius: 16px !important;
+
+  .hero-badges > div {
+    min-height: 78px !important;
+    padding: 10px 6px !important;
+    border-radius: 20px !important;
   }
 
-  /* Logo partners */
-  #intro .border-t.border-slate-200\/50 > div {
-    flex-wrap: nowrap !important;
-    justify-content: flex-start !important;
-    gap: 20px !important;
-    overflow-x: auto !important;
-    padding-bottom: 6px !important;
+  .hero-badges h3 {
+    font-size: 11px !important;
+    line-height: 1.15 !important;
+  }
+
+  .hero-badges p {
+    display: none !important;
+  }
+
+  .hero-badges span.grid {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  #products {
+    padding-top: 46px !important;
+    padding-bottom: 48px !important;
+  }
+
+  #products h2,
+  #contact h2 {
+    font-size: 30px !important;
+    line-height: 1.1 !important;
   }
 }
