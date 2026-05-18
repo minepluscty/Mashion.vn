@@ -6,6 +6,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -22,54 +23,79 @@ body {
   scrollbar-width: none;
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
-  border: 1px solid rgba(255, 255, 255, 0.78);
-  box-shadow: 0 16px 44px rgba(15, 23, 42, 0.08);
+.glass,
+.site-header-glass {
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
+}
+
+.site-header-glass {
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+}
+
+.site-header-glass.is-scrolled {
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.09);
 }
 
 .glass-strong {
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.88);
-  box-shadow: 0 16px 42px rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.08);
 }
 
 .hero-shirt-image {
   object-fit: contain;
 }
 
+#products article img {
+  background: #f1f5f9;
+}
+
+@media (min-width: 768px) {
+  .hero-badges .glass-strong {
+    background: rgba(255, 255, 255, 0.76);
+  }
+}
+
 @media (max-width: 767px) {
   header {
-    padding-top: 12px !important;
+    padding: 12px 14px 0 !important;
   }
 
-  header > div {
+  .site-header-glass {
     padding: 10px 14px !important;
     border-radius: 26px !important;
+    border: 1px solid rgba(255, 255, 255, 0.58) !important;
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.07) !important;
   }
 
-  header span.grid {
+  .site-header-glass span.grid {
     width: 38px !important;
     height: 38px !important;
     border-radius: 12px !important;
     font-size: 20px !important;
   }
 
-  header span.text-\[18px\] {
+  .site-header-glass span.text-\[18px\] {
     font-size: 18px !important;
   }
 
-  header a[href="#contact"] {
-    display: none !important;
+  .site-header-glass button {
+    width: 42px !important;
+    height: 42px !important;
   }
 
   #intro {
-    padding-top: 104px !important;
-    padding-bottom: 34px !important;
+    padding-top: 96px !important;
+    padding-bottom: 30px !important;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
   }
 
   #intro > div.relative.z-10 {
@@ -79,27 +105,25 @@ body {
   #intro .glass.mb-5 {
     margin-bottom: 14px !important;
     max-width: 100% !important;
-    padding: 6px 12px !important;
-    font-size: 10px !important;
+    padding: 6px 11px !important;
+    font-size: 9.5px !important;
     letter-spacing: 0.08em !important;
+    white-space: nowrap !important;
   }
 
   #intro h1 {
     max-width: 100% !important;
-    font-size: clamp(32px, 9.3vw, 38px) !important;
-    line-height: 1.05 !important;
+    font-size: clamp(31px, 9vw, 37px) !important;
+    line-height: 1.06 !important;
     letter-spacing: -0.052em !important;
     text-align: left !important;
   }
 
-  #intro p {
-    text-align: left !important;
-  }
-
   #intro h1 + p {
-    margin-top: 16px !important;
+    margin-top: 15px !important;
     font-size: 14.5px !important;
     line-height: 1.58 !important;
+    text-align: left !important;
   }
 
   #intro .mt-7 {
@@ -108,10 +132,10 @@ body {
   }
 
   #intro .mt-7 > a {
-    height: 48px !important;
     width: 100% !important;
-    font-size: 14px !important;
+    height: 48px !important;
     border-radius: 999px !important;
+    font-size: 14px !important;
   }
 
   #intro .mt-7 > div {
@@ -119,33 +143,34 @@ body {
   }
 
   .hero-visual {
-    min-height: 360px !important;
+    min-height: 352px !important;
     max-width: 100% !important;
-    margin-top: 4px !important;
+    margin-top: 2px !important;
   }
 
   .hero-visual > div:first-child {
     border-radius: 32px !important;
+    opacity: 0.75 !important;
   }
 
   .hero-shirt-image {
     top: 0 !important;
-    width: min(110vw, 390px) !important;
-    height: 265px !important;
     left: 50% !important;
+    width: min(110vw, 390px) !important;
+    height: 262px !important;
     transform: translateX(-50%) !important;
   }
 
   .hero-badges {
-    left: 0 !important;
-    right: 0 !important;
+    inset-inline: 0 !important;
     bottom: 0 !important;
+    display: grid !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     gap: 8px !important;
   }
 
   .hero-badges > div {
-    min-height: 78px !important;
+    min-height: 76px !important;
     padding: 10px 6px !important;
     border-radius: 20px !important;
   }
@@ -165,7 +190,7 @@ body {
   }
 
   #products {
-    padding-top: 46px !important;
+    padding-top: 44px !important;
     padding-bottom: 48px !important;
   }
 
@@ -173,5 +198,33 @@ body {
   #contact h2 {
     font-size: 30px !important;
     line-height: 1.1 !important;
+  }
+
+  #products article {
+    border-radius: 24px !important;
+    padding: 12px !important;
+  }
+
+  #products article img {
+    height: 190px !important;
+    border-radius: 20px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  #intro h1 {
+    font-size: 30px !important;
+  }
+
+  .hero-shirt-image {
+    height: 246px !important;
+  }
+
+  .hero-visual {
+    min-height: 338px !important;
+  }
+
+  .hero-badges h3 {
+    font-size: 10.5px !important;
   }
 }
