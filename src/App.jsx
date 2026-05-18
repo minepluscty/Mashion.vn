@@ -13,64 +13,54 @@ function LineIcon({ type = 'check', size = 20, className = '' }) {
 
   const icons = {
     check: <path d="m5 12 4 4L19 6" />,
-    shirt: (
-      <>
-        <path d="M8 4 5 6l-2 4 4 2v8h10v-8l4-2-2-4-3-2" />
-        <path d="M8 4c1.1 2 2.4 3 4 3s2.9-1 4-3" />
-      </>
-    ),
-    factory: (
-      <>
-        <path d="M3 21V9l6 4V9l6 4V5h6v16H3Z" />
-        <path d="M7 17h2M12 17h2M17 17h2" />
-      </>
-    ),
-    sparkles: (
-      <>
-        <path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3Z" />
-        <path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15Z" />
-      </>
-    ),
+    shirt: <><path d="M8 4 5 6l-2 4 4 2v8h10v-8l4-2-2-4-3-2" /><path d="M8 4c1.1 2 2.4 3 4 3s2.9-1 4-3" /></>,
+    factory: <><path d="M3 21V9l6 4V9l6 4V5h6v16H3Z" /><path d="M7 17h2M12 17h2M17 17h2" /></>,
+    sparkles: <><path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3Z" /><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15Z" /></>,
     star: <path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1L12 2Z" fill="currentColor" strokeWidth="0" />,
     phone: <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 1.9Z" />,
-    menu: (
-      <>
-        <path d="M4 7h16" />
-        <path d="M4 12h16" />
-        <path d="M4 17h16" />
-      </>
-    ),
+    menu: <><path d="M4 7h16" /><path d="M4 12h16" /><path d="M4 17h16" /></>,
+    ruler: <><path d="M4 7h16M4 12h16M4 17h16" /><path d="M8 7v3M13 12v3M18 7v3" /></>,
+    palette: <><circle cx="13.5" cy="10.5" r="1.5" fill="currentColor" strokeWidth="0" /><circle cx="10" cy="7.5" r="1.2" fill="currentColor" strokeWidth="0" /><path d="M12 3a9 9 0 0 0 0 18h1.5a2 2 0 0 0 1.4-3.4 1.8 1.8 0 0 1 1.3-3.1H18a3 3 0 0 0 3-3C21 6.8 17 3 12 3Z" /></>,
+    truck: <><path d="M10 17h4V5H2v12h3" /><path d="M20 17h2v-3.3a4 4 0 0 0-1.2-2.8L19 9h-5v8h2" /><circle cx="8.5" cy="17.5" r="1.5" /><circle cx="18.5" cy="17.5" r="1.5" /></>,
+    users: <><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" /><circle cx="9.5" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.8" /></>,
   }
 
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" {...common}>
-      {icons[type] || icons.check}
-    </svg>
-  )
+  return <svg width={size} height={size} viewBox="0 0 24 24" {...common}>{icons[type] || icons.check}</svg>
 }
 
 const heroBadges = [
-  { icon: 'shirt', title: 'May mẫu 48h', desc: 'Duyệt mẫu nhanh trước khi sản xuất' },
-  { icon: 'factory', title: 'Xưởng sản xuất', desc: 'Sản xuất trực tiếp, kiểm soát tiến độ' },
-  { icon: 'check', title: 'QC 3 bước', desc: 'Kiểm tra kỹ form, màu và đường may' },
+  { icon: 'shirt', title: 'May mẫu 48h', desc: 'Duyệt form, màu, logo trước khi sản xuất' },
+  { icon: 'factory', title: 'Xưởng trực tiếp', desc: 'Chủ động tiến độ, tối ưu chi phí' },
+  { icon: 'check', title: 'QC 3 bước', desc: 'Kiểm form, màu, đường may trước khi giao' },
+]
+
+const categories = [
+  { title: 'Áo thun đồng phục', desc: 'Phù hợp sự kiện, đội nhóm, chiến dịch thương hiệu.', icon: 'shirt' },
+  { title: 'Áo polo doanh nghiệp', desc: 'Lịch sự, giữ form tốt, dùng được hằng ngày.', icon: 'shirt' },
+  { title: 'Sơ mi công sở', desc: 'Chuyên nghiệp cho văn phòng, tư vấn, sales.', icon: 'ruler' },
+  { title: 'Đồng phục nhà hàng', desc: 'Tối ưu vận động, bền màu, dễ nhận diện.', icon: 'users' },
+  { title: 'Đồng phục spa', desc: 'Màu sắc tinh tế, mềm mại, tạo cảm giác cao cấp.', icon: 'sparkles' },
+  { title: 'Bảo hộ lao động', desc: 'Vải bền, form chắc, đáp ứng môi trường làm việc.', icon: 'factory' },
 ]
 
 const products = [
-  {
-    title: 'Áo polo doanh nghiệp',
-    desc: 'Lịch sự, dễ mặc, phù hợp văn phòng và sự kiện.',
-    image: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=900&auto=format&fit=crop',
-  },
-  {
-    title: 'Áo thun đồng phục',
-    desc: 'Thoáng mát, trẻ trung, tối ưu cho đội nhóm.',
-    image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=900&auto=format&fit=crop',
-  },
-  {
-    title: 'Đồng phục F&B / Spa',
-    desc: 'Thiết kế theo nhận diện, bền đẹp khi vận hành.',
-    image: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=900&auto=format&fit=crop',
-  },
+  { title: 'Áo polo nhận diện thương hiệu', desc: 'Form đứng, màu phối theo bộ nhận diện, in/thêu logo sắc nét.', image: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=900&auto=format&fit=crop' },
+  { title: 'Áo thun sự kiện & team building', desc: 'Nhẹ, thoáng, dễ sản xuất số lượng lớn và giao nhanh.', image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=900&auto=format&fit=crop' },
+  { title: 'Đồng phục F&B / Spa / Dịch vụ', desc: 'Thiết kế đúng ngành nghề, đẹp khi lên hình và bền khi vận hành.', image: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=900&auto=format&fit=crop' },
+]
+
+const process = [
+  { step: '01', title: 'Tiếp nhận nhu cầu', desc: 'Ngành nghề, số lượng, ngân sách, thời gian cần hàng.' },
+  { step: '02', title: 'Tư vấn chất liệu & form', desc: 'Chọn vải, kiểu dáng, màu sắc phù hợp thực tế sử dụng.' },
+  { step: '03', title: 'Thiết kế mockup', desc: 'Lên phối màu, vị trí logo, phương án in/thêu rõ ràng.' },
+  { step: '04', title: 'May mẫu & duyệt mẫu', desc: 'Có mẫu kiểm tra trước khi sản xuất hàng loạt.' },
+  { step: '05', title: 'Sản xuất & QC', desc: 'Kiểm soát tiến độ, chất lượng, đóng gói và giao hàng.' },
+]
+
+const benefits = [
+  { icon: 'palette', title: 'Thiết kế đúng nhận diện', desc: 'Không chỉ may áo, Mashion giúp đồng phục nhìn đúng tinh thần thương hiệu.' },
+  { icon: 'ruler', title: 'Tư vấn chất liệu thực tế', desc: 'Chọn vải theo môi trường làm việc: văn phòng, F&B, spa, sự kiện, ngoài trời.' },
+  { icon: 'truck', title: 'Giao hàng toàn quốc', desc: 'Phù hợp doanh nghiệp nhiều chi nhánh, cần đồng bộ hình ảnh.' },
 ]
 
 export default function App() {
@@ -92,7 +82,9 @@ export default function App() {
             <span className="text-[18px] font-extrabold tracking-tight text-slate-950">MASHION</span>
           </a>
           <nav className="hidden items-center gap-8 text-[14px] font-semibold text-slate-500 lg:flex">
-            <a href="#products" className="hover:text-blue-600">Sản phẩm</a>
+            <a href="#categories" className="hover:text-blue-600">Danh mục</a>
+            <a href="#products" className="hover:text-blue-600">Mẫu nổi bật</a>
+            <a href="#process" className="hover:text-blue-600">Quy trình</a>
             <a href="#why" className="hover:text-blue-600">Lợi ích</a>
             <a href="#contact" className="hover:text-blue-600">Liên hệ</a>
           </nav>
@@ -120,7 +112,7 @@ export default function App() {
               Đồng phục chuẩn thương hiệu, nâng tầm doanh nghiệp
             </h1>
             <p className="mx-auto mt-5 max-w-[560px] text-[15px] font-medium leading-[1.65] text-slate-500 md:text-[17px] lg:mx-0">
-              Thiết kế theo yêu cầu – sản xuất trực tiếp – kiểm soát chất lượng chặt chẽ cho doanh nghiệp, F&B, spa và sự kiện.
+              Thiết kế theo yêu cầu – may mẫu nhanh – sản xuất trực tiếp – kiểm soát chất lượng chặt chẽ cho doanh nghiệp, F&B, spa và sự kiện.
             </p>
             <div className="mt-7 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <a href="#contact" className="flex h-12 w-full items-center justify-center rounded-full bg-slate-950 px-7 text-[14px] font-bold text-white shadow-xl shadow-slate-950/20 transition hover:-translate-y-0.5 sm:w-auto">
@@ -145,17 +137,11 @@ export default function App() {
 
           <div className="hero-visual relative mx-auto min-h-[430px] w-full max-w-[620px] md:min-h-[560px] lg:max-w-none">
             <div className="absolute inset-0 rounded-[42px] bg-gradient-to-br from-white/10 via-blue-100/25 to-orange-100/20" />
-            <img
-              src="/Mashion.vn/hero-shirts.png"
-              alt="Mashion Polo Shirts"
-              className="hero-shirt-image absolute left-1/2 top-0 z-10 h-[330px] w-[112%] max-w-none -translate-x-1/2 object-contain drop-shadow-[0_34px_80px_rgba(15,23,42,0.16)] md:h-[500px] md:w-[105%] lg:top-[-20px]"
-            />
+            <img src="/Mashion.vn/hero-shirts.png" alt="Mashion Polo Shirts" className="hero-shirt-image absolute left-1/2 top-0 z-10 h-[330px] w-[112%] max-w-none -translate-x-1/2 object-contain drop-shadow-[0_34px_80px_rgba(15,23,42,0.16)] md:h-[500px] md:w-[105%] lg:top-[-20px]" />
             <div className="hero-badges absolute inset-x-0 bottom-0 z-20 grid grid-cols-3 gap-2 md:left-0 md:right-auto md:top-1/2 md:bottom-auto md:w-[220px] md:-translate-y-1/2 md:grid-cols-1 md:gap-4">
               {heroBadges.map((item) => (
                 <div key={item.title} className="glass-strong flex min-h-[78px] flex-col items-center justify-center rounded-[22px] px-2 py-3 text-center md:min-h-0 md:flex-row md:justify-start md:gap-3 md:px-5 md:py-4 md:text-left">
-                  <span className="mb-1 grid h-8 w-8 place-items-center rounded-full bg-blue-600/10 text-blue-600 md:mb-0 md:h-9 md:w-9">
-                    <LineIcon type={item.icon} size={18} />
-                  </span>
+                  <span className="mb-1 grid h-8 w-8 place-items-center rounded-full bg-blue-600/10 text-blue-600 md:mb-0 md:h-9 md:w-9"><LineIcon type={item.icon} size={18} /></span>
                   <span>
                     <h3 className="text-[11px] font-extrabold leading-tight text-slate-950 md:text-[13px]">{item.title}</h3>
                     <p className="mt-1 hidden text-[10px] leading-[1.45] text-slate-500 md:block">{item.desc}</p>
@@ -167,21 +153,81 @@ export default function App() {
         </div>
       </section>
 
-      <section id="products" className="mx-auto max-w-[1180px] px-4 py-14 md:px-8 md:py-20">
+      <section id="categories" className="mx-auto max-w-[1180px] px-4 py-14 md:px-8 md:py-20">
         <div className="mb-8 text-center">
-          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-blue-600">Sản phẩm nổi bật</p>
-          <h2 className="text-[30px] font-black tracking-tight text-slate-950 md:text-[44px]">Mẫu đồng phục được chọn nhiều</h2>
+          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-blue-600">Danh mục đồng phục</p>
+          <h2 className="text-[30px] font-black tracking-tight text-slate-950 md:text-[44px]">Giải pháp cho từng ngành nghề</h2>
+          <p className="mx-auto mt-3 max-w-[620px] text-[14px] leading-[1.7] text-slate-500">Chọn lọc các nhóm sản phẩm phổ biến từ thị trường đồng phục, viết lại theo cách rõ ràng và dễ đặt hàng hơn.</p>
         </div>
-        <div className="grid gap-5 md:grid-cols-3">
-          {products.map((item) => (
-            <article key={item.title} className="rounded-[28px] bg-white p-4 shadow-sm ring-1 ring-slate-200/70 transition hover:-translate-y-1 hover:shadow-xl">
-              <img src={item.image} alt={item.title} className="h-52 w-full rounded-[22px] object-cover" />
-              <div className="p-4">
-                <h3 className="text-[18px] font-extrabold text-slate-950">{item.title}</h3>
-                <p className="mt-2 text-[13px] leading-[1.6] text-slate-500">{item.desc}</p>
-              </div>
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">
+          {categories.map((item) => (
+            <article key={item.title} className="rounded-[24px] bg-white p-5 shadow-sm ring-1 ring-slate-200/70 transition hover:-translate-y-1 hover:shadow-xl">
+              <span className="mb-4 grid h-10 w-10 place-items-center rounded-2xl bg-blue-50 text-blue-600"><LineIcon type={item.icon} size={20} /></span>
+              <h3 className="text-[15px] font-extrabold text-slate-950">{item.title}</h3>
+              <p className="mt-2 text-[12px] leading-[1.55] text-slate-500">{item.desc}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section id="products" className="bg-white px-4 py-14 md:px-8 md:py-20">
+        <div className="mx-auto max-w-[1180px]">
+          <div className="mb-8 text-center">
+            <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-blue-600">Mẫu nổi bật</p>
+            <h2 className="text-[30px] font-black tracking-tight text-slate-950 md:text-[44px]">Mẫu đồng phục được chọn nhiều</h2>
+          </div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {products.map((item) => (
+              <article key={item.title} className="rounded-[28px] bg-[#f8fafc] p-4 shadow-sm ring-1 ring-slate-200/70 transition hover:-translate-y-1 hover:shadow-xl">
+                <img src={item.image} alt={item.title} className="h-52 w-full rounded-[22px] object-cover" />
+                <div className="p-4">
+                  <h3 className="text-[18px] font-extrabold text-slate-950">{item.title}</h3>
+                  <p className="mt-2 text-[13px] leading-[1.6] text-slate-500">{item.desc}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="process" className="mx-auto max-w-[1180px] px-4 py-14 md:px-8 md:py-20">
+        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <div>
+            <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-blue-600">Quy trình đặt may</p>
+            <h2 className="text-[30px] font-black tracking-tight text-slate-950 md:text-[44px]">Rõ từng bước, dễ kiểm soát</h2>
+            <p className="mt-4 text-[14px] leading-[1.75] text-slate-500">Cải tiến từ cách trình bày quy trình truyền thống: ngắn hơn, rõ việc hơn, phù hợp khách doanh nghiệp cần tiến độ và trách nhiệm.</p>
+          </div>
+          <div className="grid gap-3">
+            {process.map((item) => (
+              <article key={item.step} className="rounded-[24px] bg-white p-5 shadow-sm ring-1 ring-slate-200/70">
+                <div className="flex gap-4">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-slate-950 text-[12px] font-black text-white">{item.step}</span>
+                  <div>
+                    <h3 className="text-[15px] font-extrabold text-slate-950">{item.title}</h3>
+                    <p className="mt-1 text-[13px] leading-[1.6] text-slate-500">{item.desc}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="why" className="bg-white px-4 py-14 md:px-8 md:py-20">
+        <div className="mx-auto max-w-[1180px]">
+          <div className="mb-8 text-center">
+            <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-blue-600">Vì sao chọn Mashion</p>
+            <h2 className="text-[30px] font-black tracking-tight text-slate-950 md:text-[44px]">Đẹp hơn một bộ áo đồng phục thông thường</h2>
+          </div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {benefits.map((item) => (
+              <article key={item.title} className="rounded-[28px] bg-[#f8fafc] p-6 ring-1 ring-slate-200/70">
+                <span className="mb-5 grid h-11 w-11 place-items-center rounded-2xl bg-blue-50 text-blue-600"><LineIcon type={item.icon} size={22} /></span>
+                <h3 className="text-[17px] font-extrabold text-slate-950">{item.title}</h3>
+                <p className="mt-2 text-[13px] leading-[1.7] text-slate-500">{item.desc}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
