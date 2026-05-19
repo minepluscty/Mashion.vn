@@ -22,7 +22,20 @@ const stats=[
   {icon:'shield',num:'QC',text:'Kiểm soát chất lượng 3 bước'}
 ]
 const quoteBenefits=['Báo giá nhanh trong vòng 24h','Miễn phí thiết kế & lên mẫu','Không cam kết – Không phát sinh chi phí']
-const projects=[{tag:'Doanh nghiệp',title:'Đồng phục văn phòng cao cấp',desc:'Polo & sơ mi nhận diện thương hiệu',image:'/Mashion.vn/projects/561606DF-364B-4203-B7E1-06935470B692.png'},{tag:'Nhà hàng',title:'Đồng phục nhà hàng – cafe',desc:'Form gọn, dễ vận động, đồng bộ đội ngũ',image:'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=900&auto=format&fit=crop'},{tag:'Spa',title:'Đồng phục spa – thẩm mỹ',desc:'Tinh tế, sạch sẽ, chuyên nghiệp',image:'/Mashion.vn/projects/74BA96C9-E8DD-4E05-9A82-95CF85E9B753.png'},{tag:'Sự kiện',title:'Đồng phục sự kiện / showroom',desc:'Nổi bật thương hiệu, dễ nhận diện',image:'/Mashion.vn/projects/983DAD50-6D75-4012-A7E3-7549963F9923.png'}]
+const projects=[
+  {tag:'Doanh nghiệp',title:'Đồng phục văn phòng cao cấp',desc:'Polo, sơ mi, vest nhận diện thương hiệu',image:'/Mashion.vn/projects/561606DF-364B-4203-B7E1-06935470B692.png'},
+  {tag:'Nhà hàng',title:'Đồng phục nhà hàng – cafe',desc:'Đồng phục phục vụ, barista, quản lý',image:'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=900&auto=format&fit=crop'},
+  {tag:'Khách sạn',title:'Khách sạn – Resort',desc:'Lễ tân, buồng phòng, F&B, concierge',image:'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=900&auto=format&fit=crop'},
+  {tag:'Spa',title:'Đồng phục spa – thẩm mỹ',desc:'Tinh tế, sạch sẽ, chuyên nghiệp',image:'/Mashion.vn/projects/74BA96C9-E8DD-4E05-9A82-95CF85E9B753.png'},
+  {tag:'Y tế',title:'Y tế – Phòng khám',desc:'Bác sĩ, điều dưỡng, lễ tân y tế',image:'https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=900&auto=format&fit=crop'},
+  {tag:'Giáo dục',title:'Giáo dục – Trung tâm',desc:'Giáo viên, nhân viên, sự kiện học đường',image:'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=900&auto=format&fit=crop'},
+  {tag:'Bán lẻ',title:'Bán lẻ – Showroom',desc:'Tư vấn bán hàng, cửa hàng, trưng bày',image:'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=900&auto=format&fit=crop'},
+  {tag:'Sự kiện',title:'Sự kiện – PG / PB',desc:'Nổi bật thương hiệu, dễ nhận diện',image:'/Mashion.vn/projects/983DAD50-6D75-4012-A7E3-7549963F9923.png'},
+  {tag:'Kỹ thuật',title:'Xây dựng – Kỹ thuật',desc:'Áo kỹ thuật, bảo hộ, công trình',image:'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=900&auto=format&fit=crop'},
+  {tag:'Logistics',title:'Logistics – Kho vận',desc:'Đồng phục kho, giao nhận, vận hành',image:'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=900&auto=format&fit=crop'},
+  {tag:'Thể thao',title:'Gym – Thể thao – CLB',desc:'Năng động, thoáng mát, dễ vận động',image:'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=900&auto=format&fit=crop'},
+  {tag:'Tài chính',title:'Ngân hàng – Tài chính',desc:'Chuyên nghiệp, chỉn chu, cao cấp',image:'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=900&auto=format&fit=crop'}
+]
 const materials=[['Cotton','Mềm, thấm hút tốt, hợp áo thun cao cấp'],['Cá sấu poly','Bền màu, nhanh khô, hợp polo số lượng lớn'],['CVC / TC','Giữ form tốt, tối ưu chi phí doanh nghiệp'],['Kate','Phù hợp sơ mi, spa, nhà hàng'],['Kaki','Dày, chắc, hợp tạp dề và bảo hộ'],['Thun lạnh','Mát, nhẹ, hợp sự kiện và thể thao']]
 const faqs=[['Đặt tối thiểu bao nhiêu áo?','Tùy dòng sản phẩm và chất liệu. Mashion sẽ tư vấn mức tối ưu theo ngân sách.'],['Bao lâu có mẫu?','Thông thường có thể may mẫu trong 48h sau khi chốt form, vải và logo.'],['Có hỗ trợ thiết kế không?','Có. Mashion hỗ trợ mockup màu, vị trí logo và phương án in/thêu.'],['Có giao hàng toàn quốc không?','Có. Đơn hàng có thể giao theo từng đợt hoặc từng chi nhánh.']]
 
