@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './index.css'
 import './extra.css'
+import './desktop.css'
 
 const PHONE='0900000000'
 const ZALO='https://zalo.me/0900000000'
