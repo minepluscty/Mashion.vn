@@ -3,6 +3,7 @@ import './index.css'
 import './extra.css'
 import './desktop.css'
 import './industry-grid.css'
+import './mobile-fixes.css'
 
 const PHONE='0900000000'
 const ZALO='https://zalo.me/0900000000'
