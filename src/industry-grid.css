@@ -267,23 +267,35 @@
   }
 
   .view-all-industries{
-    display:flex!important;
-    height:54px;
-    margin:26px 0 0;
+    display:inline-flex!important;
+    min-width:210px;
+    height:48px;
+    margin:24px auto 0;
+    padding:0 18px 0 22px;
     align-items:center;
     justify-content:center;
-    border-radius:18px;
-    background:linear-gradient(135deg,#2563eb,#3b82f6);
-    color:#fff;
+    gap:10px;
+    border-radius:999px;
+    background:rgba(255,255,255,.9);
+    border:1px solid rgba(37,99,235,.28);
+    color:#1d4ed8;
     text-decoration:none;
-    font-size:17px;
+    font-size:15px;
     font-weight:900;
-    box-shadow:0 14px 30px rgba(37,99,235,.22);
+    box-shadow:0 10px 26px rgba(15,23,42,.08), inset 0 1px 0 rgba(255,255,255,.95);
   }
 
   .view-all-industries span{
-    margin-left:10px;
-    font-size:22px;
+    width:26px;
+    height:26px;
+    margin-left:2px;
+    border-radius:999px;
+    display:grid;
+    place-items:center;
+    background:#2563eb;
+    color:#fff;
+    font-size:17px;
+    line-height:1;
   }
 }
 
