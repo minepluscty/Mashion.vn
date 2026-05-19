@@ -66,33 +66,44 @@
   }
 
   .project-icon-badge{
-    position:absolute;
-    left:14px;
-    top:-20px;
-    width:42px;
-    height:42px;
-    border-radius:999px;
-    background:#fff;
-    border:1px solid rgba(226,232,240,.95);
-    box-shadow:0 10px 22px rgba(15,23,42,.12);
-    display:grid;
-    place-items:center;
+    position:absolute!important;
+    left:14px!important;
+    top:-21px!important;
+    width:42px!important;
+    height:42px!important;
+    border-radius:999px!important;
+    background:#fff!important;
+    border:1px solid rgba(226,232,240,.95)!important;
+    box-shadow:0 10px 22px rgba(15,23,42,.12)!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
     padding:0!important;
+    line-height:0!important;
+    z-index:3!important;
   }
 
   .project-icon-badge .icon-mark{
-    width:20px!important;
-    height:20px!important;
+    width:21px!important;
+    height:21px!important;
     color:#2563eb!important;
     background:transparent!important;
-    display:grid!important;
-    place-items:center!important;
-    font-size:20px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    font-size:21px!important;
+    line-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    border-radius:0!important;
   }
 
   .project-icon-badge .icon-mark svg{
-    width:20px!important;
-    height:20px!important;
+    width:21px!important;
+    height:21px!important;
+    display:block!important;
+    margin:0!important;
+    transform:none!important;
   }
 
   .project-card h3{
@@ -201,33 +212,44 @@
   }
 
   .project-icon-badge{
-    position:absolute;
-    left:12px;
-    top:-20px;
-    width:40px;
-    height:40px;
-    border-radius:999px;
-    background:#fff;
-    border:1px solid rgba(226,232,240,.95);
-    box-shadow:0 10px 22px rgba(15,23,42,.12);
-    display:grid;
-    place-items:center;
+    position:absolute!important;
+    left:12px!important;
+    top:-20px!important;
+    width:40px!important;
+    height:40px!important;
+    border-radius:999px!important;
+    background:#fff!important;
+    border:1px solid rgba(226,232,240,.95)!important;
+    box-shadow:0 10px 22px rgba(15,23,42,.12)!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
     padding:0!important;
+    line-height:0!important;
+    z-index:3!important;
   }
 
   .project-icon-badge .icon-mark{
-    width:18px!important;
-    height:18px!important;
+    width:19px!important;
+    height:19px!important;
     color:#2563eb!important;
     background:transparent!important;
-    display:grid!important;
-    place-items:center!important;
-    font-size:18px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    font-size:19px!important;
+    line-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    border-radius:0!important;
   }
 
   .project-icon-badge .icon-mark svg{
-    width:18px!important;
-    height:18px!important;
+    width:19px!important;
+    height:19px!important;
+    display:block!important;
+    margin:0!important;
+    transform:none!important;
   }
 
   .project-card h3{
