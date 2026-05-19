@@ -30,10 +30,10 @@ const reasons = [
 ]
 
 const projects = [
-  { tag: 'Doanh nghiệp', title: 'Đồng phục văn phòng cao cấp', desc: 'Polo & sơ mi nhận diện thương hiệu', image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=900&auto=format&fit=crop' },
-  { tag: 'Nhà hàng', title: 'Đồng phục nhà hàng – cafe', desc: 'Form gọn, dễ vận động, đồng bộ đội ngũ', image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=900&auto=format&fit=crop' },
-  { tag: 'Spa', title: 'Đồng phục spa – thẩm mỹ', desc: 'Tinh tế, sạch sẽ, chuyên nghiệp', image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=900&auto=format&fit=crop' },
-  { tag: 'Sự kiện', title: 'Đồng phục sự kiện / showroom', desc: 'Nổi bật thương hiệu, dễ nhận diện', image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=900&auto=format&fit=crop' },
+  { tag: 'Doanh nghiệp', title: 'Đồng phục văn phòng cao cấp', desc: 'Polo & sơ mi nhận diện thương hiệu', image: '/Mashion.vn/projects/561606DF-364B-4203-B7E1-06935470B692.png' },
+  { tag: 'Nhà hàng', title: 'Đồng phục nhà hàng – cafe', desc: 'Form gọn, dễ vận động, đồng bộ đội ngũ', image: '/Mashion.vn/projects/610F87E0-2644-4F0F-8A23-1FB00DCF7574.png' },
+  { tag: 'Spa', title: 'Đồng phục spa – thẩm mỹ', desc: 'Tinh tế, sạch sẽ, chuyên nghiệp', image: '/Mashion.vn/projects/74BA96C9-E8DD-4E05-9A82-95CF85E9B753.png' },
+  { tag: 'Sự kiện', title: 'Đồng phục sự kiện / showroom', desc: 'Nổi bật thương hiệu, dễ nhận diện', image: '/Mashion.vn/projects/983DAD50-6D75-4012-A7E3-7549963F9923.png' },
 ]
 
 export default function App() {
@@ -146,7 +146,7 @@ export default function App() {
 
         <div className="note-box">
           <span>💡</span>
-          <p><b>Ghi chú:</b> Hình ảnh dự án đang dùng ảnh minh họa tạm, sau này thay bằng ảnh thật MASHION.</p>
+          <p><b>Ghi chú:</b> Hình ảnh dự án đang dùng ảnh bạn upload trong thư mục projects.</p>
         </div>
       </section>
       <a className="sticky-mobile-cta" href="tel:0900000000">Nhận tư vấn miễn phí</a>
