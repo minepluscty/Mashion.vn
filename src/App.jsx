@@ -29,6 +29,13 @@ const reasons = [
   { icon: 'headset', title: 'Hỗ trợ tận tâm', desc: 'Tư vấn nhanh chóng, đồng hành lâu dài' },
 ]
 
+const projects = [
+  { tag: 'Doanh nghiệp', title: 'Đồng phục văn phòng cao cấp', desc: 'Polo & sơ mi nhận diện thương hiệu', image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=900&auto=format&fit=crop' },
+  { tag: 'Nhà hàng', title: 'Đồng phục nhà hàng – cafe', desc: 'Form gọn, dễ vận động, đồng bộ đội ngũ', image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=900&auto=format&fit=crop' },
+  { tag: 'Spa', title: 'Đồng phục spa – thẩm mỹ', desc: 'Tinh tế, sạch sẽ, chuyên nghiệp', image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=900&auto=format&fit=crop' },
+  { tag: 'Sự kiện', title: 'Đồng phục sự kiện / showroom', desc: 'Nổi bật thương hiệu, dễ nhận diện', image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=900&auto=format&fit=crop' },
+]
+
 export default function App() {
   return (
     <main className="mashion-page">
@@ -135,9 +142,11 @@ export default function App() {
           </article>
         </div>
 
+        <ProjectShowcase />
+
         <div className="note-box">
           <span>💡</span>
-          <p><b>Ghi chú:</b> Giao diện tập trung vào nội dung cốt lõi, trình bày rõ ràng – chuyên nghiệp – dễ đọc, giữ tinh thần cao cấp cho thương hiệu MASHION.</p>
+          <p><b>Ghi chú:</b> Hình ảnh dự án đang dùng ảnh minh họa tạm, sau này thay bằng ảnh thật MASHION.</p>
         </div>
       </section>
       <a className="sticky-mobile-cta" href="tel:0900000000">Nhận tư vấn miễn phí</a>
@@ -162,5 +171,28 @@ function ProcessItem({ number, icon, title, desc }) {
       <h3>{title}</h3>
       <p>{desc}</p>
     </div>
+  )
+}
+
+function ProjectShowcase() {
+  return (
+    <section className="project-showcase">
+      <div className="project-head">
+        <p>Dự án tiêu biểu</p>
+        <h2>Đồng phục theo từng ngành nghề</h2>
+      </div>
+      <div className="project-grid">
+        {projects.map((item) => (
+          <article className="project-card" key={item.title}>
+            <img src={item.image} alt={item.title} />
+            <div>
+              <span>{item.tag}</span>
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
   )
 }
