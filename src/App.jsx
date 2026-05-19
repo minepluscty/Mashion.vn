@@ -16,6 +16,11 @@ function Icon({ type }) {
 }
 
 const logos = ['BIDV', 'viettel', 'FPT', 'VINGROUP']
+const testimonials = [
+  'Duyệt mẫu nhanh, áo lên form đẹp và đúng màu thương hiệu.',
+  'Giao kịp tiến độ cho sự kiện, đóng gói rất gọn gàng.',
+  'Tư vấn chất liệu dễ hiểu, đội ngũ mặc đồng bộ hơn hẳn.',
+]
 
 const reasons = [
   { icon: 'award', title: 'Chất lượng vượt trội', desc: 'Kiểm soát chất lượng 3 bước chặt chẽ' },
@@ -53,6 +58,10 @@ export default function App() {
                   <p>Từ 500+ doanh nghiệp</p>
                 </div>
               </div>
+            </div>
+
+            <div className="industry-tabs">
+              <span>Doanh nghiệp</span><span>Nhà hàng</span><span>Spa</span><span>Sự kiện</span>
             </div>
 
             <div className="shirt-area">
@@ -101,6 +110,21 @@ export default function App() {
               </div>
             </section>
 
+            <section className="quick-quote">
+              <h2>Báo giá nhanh</h2>
+              <div className="quote-grid">
+                <span>Áo polo</span><span>100–300 áo</span><span>In / thêu logo</span>
+              </div>
+              <button>Nhận tư vấn báo giá →</button>
+            </section>
+
+            <section className="testimonial-box">
+              <h2>Khách hàng nói gì?</h2>
+              <div className="testimonial-list">
+                {testimonials.map((item) => <p key={item}>“{item}”</p>)}
+              </div>
+            </section>
+
             <section className="bottom-cta">
               <div>
                 <h3>Bạn cần tư vấn ngay?</h3>
@@ -116,6 +140,7 @@ export default function App() {
           <p><b>Ghi chú:</b> Giao diện tập trung vào nội dung cốt lõi, trình bày rõ ràng – chuyên nghiệp – dễ đọc, giữ tinh thần cao cấp cho thương hiệu MASHION.</p>
         </div>
       </section>
+      <a className="sticky-mobile-cta" href="tel:0900000000">Nhận tư vấn miễn phí</a>
     </main>
   )
 }
